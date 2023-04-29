@@ -1,0 +1,64 @@
+#
+# YAML Schema
+# ===========
+#
+#     wordlist-name:
+#       :url: https://...
+#
+# Note: the wordlist's URL may be a regular `http://` or `https://` URL to a
+# file, or a `https://` Git URL (ex: `https://github.com/foo/bar.git`).
+#
+---
+alexa-top-1000:
+  :url: https://github.com/urbanadventurer/WhatWeb/blob/master/plugin-development/alexa-top-1000.txt
+
+subdomains:
+  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains.txt
+
+subdomains-100:
+  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-100.txt
+
+subdomains-500:
+  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-500.txt
+
+subdomains-1000:
+  :url: https:/raw.githubusercontent./com/rbsec/dnscan/master/subdomains-1000.txt
+
+subdomains-10000:
+  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-10000.txt
+
+subdomains-uk-500:
+  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-uk-500.txt
+
+subdomains-uk-1000:
+  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-uk-1000.txt
+
+suffixes:
+  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/suffixes.txt
+
+tlds:
+  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/tlds.txt
+
+argon:
+  :url: http://www.mediafire.com/file/zd3zhzfezl9wd96/Argon_Wordlist_v2.gz
+
+rockyou:
+  :url: https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
+
+directory-list-2-3-medium:
+  :url: https://github.com/daviddias/node-dirbuster/raw/master/lists/directory-list-2.3-medium.txt
+
+SecLists:
+  :url: https://github.com/danielmiessler/SecLists.git
+
+pry0cc:
+  :url: https://github.com/pry0cc/relevant-wordlist.git
+
+fuzzdb:
+  :url: https://github.com/fuzzdb-project/fuzzdb.git
+
+kkrypt0nn:
+  :url: https://github.com/kkrypt0nn/wordlists.git
+
+trickest:
+  :url: https://github.com/trickest/wordlists.git

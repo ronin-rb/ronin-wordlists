@@ -1,0 +1,37 @@
+name: ronin-wordlists
+summary: A library and tool for managing wordlists.
+description: |
+  ronin-wordlists is a library and tool for managing wordlists. ronin-wordlists
+  can install and update wordlists, and contains a curated list of popular
+  wordlists and their download URLs.
+
+license: LGPL-3.0
+authors: Postmodern
+email: postmodern.mod3@gmail.com
+homepage: https://ronin-rb.dev/
+has_yard: true
+
+metadata:
+  documentation_uri: https://ronin-rb.dev/docs/ronin-wordlists
+  source_code_uri:   https://github.com/ronin-rb/ronin-wordlists
+  bug_tracker_uri:   https://github.com/ronin-rb/ronin-wordlists/issues
+  changelog_uri:     https://github.com/ronin-rb/ronin-wordlists/blob/main/ChangeLog.md
+  rubygems_mfa_required: 'true'
+
+generated_files:
+ - man/ronin-wordlists.1
+ - man/ronin-wordlists-download.1
+ - man/ronin-wordlists-list.1
+ - man/ronin-wordlists-purge.1
+ - man/ronin-wordlists-remove.1
+ - man/ronin-wordlists-update.1
+
+required_ruby_version: ">= 3.0.0"
+
+dependencies:
+  wordlist: ~> 1.0
+  # Ronin dependencies:
+  ronin-core: ~> 0.1
+
+development_dependencies:
+  bundler: ~> 2.0
