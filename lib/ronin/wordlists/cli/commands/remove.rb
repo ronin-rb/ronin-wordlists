@@ -32,7 +32,7 @@ module Ronin
         #
         # ## Usage
         #
-        #     ronin-wordlists remove [options] [WORDLISt]
+        #     ronin-wordlists remove [options] NAME
         #
         # ## Options
         #
@@ -41,17 +41,17 @@ module Ronin
         #
         # ## Arguments
         #
-        #     WORDLIST                         The wordlist to remove
+        #     NAME                             The wordlist to remove
         #
         class Remove < Command
 
           include WordlistDirOption
           include Core::CLI::Logging
 
-          usage '[options] [WORDLISt]'
+          usage '[options] NAME'
 
-          argument :wordlist, required: true,
-                              desc:     'The wordlist to remove'
+          argument :name, required: true,
+                          desc:     'The wordlist to remove'
 
           description 'Deletes a wordlist from the cache directory'
 
