@@ -64,7 +64,7 @@ module Ronin
       # @param [String, URI::HTTP] url
       #   The `http://` or `https://` URL for the wordlist file.
       #
-      # @param [String] dest_dir
+      # @param [String] dest
       #   The directory to download the wordlist file into.
       #
       def self.download(url,dest=Dir.pwd)
