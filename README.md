@@ -26,7 +26,7 @@ wordlists and their download URLs.
 
 ## Synopsis
 
-```shell
+```
 $ ronin-wordlists
 Usage: ronin-wordlists [options]
 
