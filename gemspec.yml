@@ -31,7 +31,7 @@ required_ruby_version: ">= 3.0.0"
 dependencies:
   wordlist: ~> 1.0
   # Ronin dependencies:
-  ronin-core: ~> 0.1
+  ronin-core: ~> 0.2
 
 development_dependencies:
   bundler: ~> 2.0

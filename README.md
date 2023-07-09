@@ -106,7 +106,7 @@ Ronin::Wordlists.list
 
 * [Ruby] >= 3.0.0
 * [wordlist] ~> 1.0
-* [ronin-core] ~> 0.1
+* [ronin-core] ~> 0.2
 
 ## Install
 
