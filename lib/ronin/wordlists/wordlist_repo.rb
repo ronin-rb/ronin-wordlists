@@ -63,7 +63,7 @@ module Ronin
         repo_name = File.basename(uri.path)
         repo_path = File.join(dest_dir,repo_name)
 
-        system('git','clone','--depth','1','--',@url,repo_path)
+        system('git','clone','--depth','1','--',url,repo_path)
         return new(repo_path, url: url)
       end
 
