@@ -60,6 +60,7 @@ module Ronin
       #
       def self.download(url,dest_dir=Dir.pwd)
         uri       = URI(url)
+        url       = url.to_s
         repo_name = File.basename(uri.path)
         repo_path = File.join(dest_dir,repo_name)
 
