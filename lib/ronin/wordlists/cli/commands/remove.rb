@@ -61,12 +61,10 @@ module Ronin
           # Runs the `ronin-wordlists remove` command.
           #
           def run(name)
-            begin
-              wordlist_dir.remove(name)
-            rescue WordlistNotFound
-              print_error "no such wordlist: #{name}"
-              exit(1)
-            end
+            wordlist_dir.remove(name)
+          rescue WordlistNotFound
+            print_error "no such wordlist: #{name}"
+            exit(1)
           end
 
         end
