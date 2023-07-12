@@ -145,6 +145,22 @@ module Ronin
       end
 
       #
+      # Opens a wordlist from the wordlist directory.
+      #
+      # @param [String] name
+      #   The wordlist file name.
+      #
+      # @return [Wordlist::File]
+      #   The opened wordlist file.
+      #
+      # @raise [WordlistNotFound]
+      #   No wordlist with the given name.
+      #
+      def open(name)
+        @wordlist_dir.open(name)
+      end
+
+      #
       # Downloads a wordlist into the cache directory.
       #
       # @param [String, URI::HTTP] url
