@@ -104,6 +104,9 @@ module Ronin
       #
       # Updates the wordlist file, if {#url} is set.
       #
+      # @raise [DownloadFailed]
+      #   Failed to download the wordlist.
+      #
       def update
         if @url
           self.class.download(@url,@path)

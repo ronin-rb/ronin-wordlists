@@ -84,7 +84,11 @@ module Ronin
           #
           def update(wordlist)
             log_info "Updating wordlist #{wordlist.name} from #{wordlist.url} ..."
-            wordlist.update
+            begin
+              wordlist.update
+            rescue DownloadFailed => error
+              log_error error.message
+            end
           end
 
         end

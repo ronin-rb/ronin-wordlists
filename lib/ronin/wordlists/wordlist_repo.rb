@@ -131,9 +131,19 @@ module Ronin
       #
       # Updates the wordlist repository.
       #
+      # @raise [DownloadFailed]
+      #   The `git pull -C` command failed or `git` was not installed on the
+      #   system.
+      #
       def update
         if git?
-          system('git','pull','-C',@path)
+          case system('git','pull','-C',@path)
+          when true then true
+          when false
+            raise(DownloadFailed,"git command failed: git pull -C #{@path}")
+          when nil
+            raise(DownloadFailed,"git is not installed on the system")
+          end
         end
       end
 
