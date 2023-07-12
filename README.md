@@ -50,25 +50,25 @@ Commands:
 Download a known wordlist:
 
 ```shell
-$ ronin-wordlists download rockyou
+ronin-wordlists download rockyou
 ```
 
 Download a wordlist from a URL:
 
 ```shell
-$ ronin-wordlists download https://example.com/path/to/wordlist.gz
+ronin-wordlists download https://example.com/path/to/wordlist.gz
 ```
 
 Update all downloaded wordlists:
 
 ```shell
-$ ronin-wordlists update
+ronin-wordlists update
 ```
 
 Update a specific wordlist:
 
 ```shell
-$ ronin-wordlists update SecLists
+ronin-wordlists update SecLists
 ```
 
 ## Examples
@@ -111,7 +111,7 @@ Ronin::Wordlists.list
 ## Install
 
 ```shell
-$ gem install ronin-wordlists
+gem install ronin-wordlists
 ```
 
 ### Gemfile
