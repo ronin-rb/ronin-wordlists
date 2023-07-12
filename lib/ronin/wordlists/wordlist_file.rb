@@ -18,6 +18,9 @@
 # along with ronin-wordlists.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+require 'ronin/wordlists/exceptions'
+require 'ronin/core/system'
+
 require 'net/https'
 require 'uri'
 
@@ -67,27 +70,15 @@ module Ronin
       # @param [String] dest
       #   The directory to download the wordlist file into.
       #
+      # @raise [DownloadFailed]
+      #   Failed to download the wordlist file.
+      #
       def self.download(url,dest=Dir.pwd)
-        uri       = URI(url)
-        ssl       = (uri.scheme == 'https')
-        file_name = File.basename(uri.path)
-        dest_path = if File.directory?(dest)
-                      File.join(dest,file_name)
-                    else
-                      dest
+        dest_path = begin
+                      Core::System.download(url,dest)
+                    rescue Core::System::DownloadFailed => error
+                      raise(DownloadFailed,error.message)
                     end
-
-        File.open(dest_path,'wb') do |file|
-          Net::HTTP.start(uri.host,uri.port, use_ssl: ssl) do |http|
-            request = Net::HTTP::Get.new(uri.request_uri)
-
-            http.request(request) do |response|
-              response.read_body do |chunk|
-                file.write(chunk)
-              end
-            end
-          end
-        end
 
         return new(dest_path, url: url)
       end

@@ -93,9 +93,14 @@ module Ronin
           def download(url)
             log_info "Downloading wordlist #{url} ..."
 
-            downloaded_wordlist = wordlist_dir.download(url)
+            begin
+              downloaded_wordlist = wordlist_dir.download(url)
 
-            log_info "Wordlist #{downloaded_wordlist.name} downloaded"
+              log_info "Wordlist #{downloaded_wordlist.name} downloaded"
+            rescue DownloadFailed => error
+              log_error error.message
+              exit(2)
+            end
           end
 
         end

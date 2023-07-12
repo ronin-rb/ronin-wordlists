@@ -18,6 +18,8 @@
 # along with ronin-wordlists.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+require 'ronin/wordlists/exceptions'
+
 require 'fileutils'
 require 'uri'
 
@@ -58,14 +60,24 @@ module Ronin
       # @return [WordlistRepo]
       #   The newly cloned wordlist repository.
       #
+      # @raise [DownloadFailed]
+      #   The `git clone --depth 1` command failed or `git` was not installed on
+      #   the system.
+      #
       def self.download(url,dest_dir=Dir.pwd)
         uri       = URI(url)
         url       = url.to_s
         repo_name = File.basename(uri.path)
         repo_path = File.join(dest_dir,repo_name)
 
-        system('git','clone','--depth','1','--',url,repo_path)
-        return new(repo_path, url: url)
+        case system('git','clone','--depth','1','--',url,repo_path)
+        when true
+          new(repo_path, url: url)
+        when false
+          raise(DownloadFailed,"git command failed: git clone --depth 1 -- #{url} #{repo_path}")
+        when nil
+          raise(DownloadFailed,"git is not installed on the system")
+        end
       end
 
       #

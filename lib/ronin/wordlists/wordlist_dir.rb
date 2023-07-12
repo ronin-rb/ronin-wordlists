@@ -154,6 +154,9 @@ module Ronin
       #   The downloaded wordlist. A {WordlistRepo} will be returned for git
       #   URLs and {WordlistFile} for `http://` or `https://` URLs.
       #
+      # @raise [DownloadFailed]
+      #   The download of the wordlist file or repository failed.
+      #
       def download(url)
         uri = URI(url)
 

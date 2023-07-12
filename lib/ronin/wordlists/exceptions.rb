@@ -27,6 +27,12 @@ module Ronin
     end
 
     #
+    # Indicates that a download of a wordlist failed.
+    #
+    class DownloadFailed < Wordlists::Exception
+    end
+
+    #
     # Indicates that a requests wordlist does not exist.
     #
     class WordlistNotFound < Wordlists::Exception
