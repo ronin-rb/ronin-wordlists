@@ -30,9 +30,13 @@ module Ronin
     #
     class WordlistRepo
 
+      # The path to the wordlist repository.
+      #
       # @return [String]
       attr_reader :path
 
+      # The name of the wordlist repository.
+      #
       # @return [String]
       attr_reader :name
 
@@ -41,6 +45,10 @@ module Ronin
       #
       # @param [String] path
       #   The path to the wordlist repository.
+      #
+      # @param [String, nil] url
+      #   The optional URL of the wordlist repository.
+      #   If no URL is given, {#url} will infer it from the git repository.
       #
       def initialize(path, url: nil)
         @path = path
