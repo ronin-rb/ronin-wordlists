@@ -58,7 +58,7 @@ module Ronin
       def initialize(path, url: nil)
         @path = path
         @name = File.basename(@path,File.extname(@path))
-        @url  = URI(url) if url
+        @url  = url
       end
 
       #
@@ -80,7 +80,7 @@ module Ronin
                       raise(DownloadFailed,error.message)
                     end
 
-        return new(dest_path, url: url)
+        return new(dest_path, url: url.to_s)
       end
 
       #
