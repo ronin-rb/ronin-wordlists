@@ -85,7 +85,7 @@ module Ronin
             wordlists = YAML.load_file(File.join(ROOT,'data','wordlists.yml'))
 
             wordlists.each do |name,attributes|
-              puts name
+              puts "[ #{name} ]"
               puts
               puts "  * URL: #{attributes[:url]}"
               puts "  * Categories: #{attributes[:categories].join(', ')}"
