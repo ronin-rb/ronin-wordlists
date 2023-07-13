@@ -11,54 +11,72 @@
 ---
 alexa-top-1000:
   :url: https://github.com/urbanadventurer/WhatWeb/blob/master/plugin-development/alexa-top-1000.txt
+  :summary: The Alexa Top 1000 domain names.
 
 subdomains:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains.txt
+  :summary: List of common subdomain names used by the dnscan util.
 
 subdomains-100:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-100.txt
+  :summary: Top 100 most common subdomain names used by the dnscan util.
 
 subdomains-500:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-500.txt
+  :summary: Top 500 most common subdomain names used by the dnscan util.
 
 subdomains-1000:
   :url: https:/raw.githubusercontent./com/rbsec/dnscan/master/subdomains-1000.txt
+  :summary: Top 1000 most common subdomain names used by the dnscan util.
 
 subdomains-10000:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-10000.txt
+  :summary: Top 10000 most common subdomain names used by the dnscan util.
 
 subdomains-uk-500:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-uk-500.txt
+  :summary: Top 500 most common UK subdomain names used by the dnscan util.
 
 subdomains-uk-1000:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-uk-1000.txt
+  :summary: Top 1000 most common UK subdomain names used by the dnscan util.
 
 suffixes:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/suffixes.txt
+  :summary: List of common domain suffixes used by the dnscan util.
 
 tlds:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/tlds.txt
+  :summary: List of common TLDs used by the dnscan util.
 
 argon:
   :url: http://www.mediafire.com/file/zd3zhzfezl9wd96/Argon_Wordlist_v2.gz
+  :summary: Really big password list.
 
 rockyou:
   :url: https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
+  :summary: Common passwords list.
 
 directory-list-2-3-medium:
   :url: https://github.com/daviddias/node-dirbuster/raw/master/lists/directory-list-2.3-medium.txt
+  :summary: Common directory name wordlist used for dirbusting.
 
 SecLists:
   :url: https://github.com/danielmiessler/SecLists.git
+  :summary: The SecLists repository of pentester wordlists.
 
 pry0cc:
   :url: https://github.com/pry0cc/relevant-wordlist.git
+  :summary: Dynamically generated wordlists based off of news headlines.
 
 fuzzdb:
   :url: https://github.com/fuzzdb-project/fuzzdb.git
+  :summary: FuzzDB repository of fuzzing wordlists.
 
 kkrypt0nn:
   :url: https://github.com/kkrypt0nn/wordlists.git
+  :summary: kkrypt0nn's collection of wordlists.
 
 trickest:
   :url: https://github.com/trickest/wordlists.git
+  :summary: trickest's collection of wordlists.
