@@ -22,6 +22,8 @@ require 'ronin/wordlists/cli/command'
 require 'ronin/wordlists/cli/wordlist_dir_option'
 require 'ronin/wordlists'
 
+require 'yaml'
+
 module Ronin
   module Wordlists
     class CLI
@@ -36,6 +38,7 @@ module Ronin
         # ## Options
         #
         #     -d, --wordlist-dir DIR           The wordlist directory
+        #     -a, --available                  List all wordlists available for download
         #     -h, --help                       Print help information
         #
         # ## Arguments
@@ -47,6 +50,9 @@ module Ronin
           include WordlistDirOption
 
           usage '[options] [NAME]'
+
+          option :available, short: '-a',
+                             desc:  'List all wordlists available for download'
 
           argument :name, required: false,
                           usage:    'NAME',
@@ -63,6 +69,38 @@ module Ronin
           #   The optional wordlist name.
           #
           def run(name=nil)
+            if options[:available]
+              list_available_wordlists
+            else
+              list_wordlists(name)
+            end
+          end
+
+          #
+          # Lists wordlists available for download.
+          #
+          # @see https://github.com/ronin-rb/ronin-wordlists/blob/main/data/wordlists.yml
+          #
+          def list_available_wordlists
+            wordlists = YAML.load_file(File.join(ROOT,'data','wordlists.yml'))
+
+            wordlists.each do |name,attributes|
+              puts name
+              puts
+              puts "  * URL: #{attributes[:url]}"
+              puts "  * Categories: #{attributes[:categories].join(', ')}"
+              puts "  * Summary: #{attributes[:summary]}"
+              puts
+            end
+          end
+
+          #
+          # Lists downloaded wordlists.
+          #
+          # @param [String, nil] name
+          #   Optional wordlit name to list.
+          #
+          def list_wordlists(name=nil)
             wordlists = if name then wordlist_dir.list(name)
                         else         wordlist_dir.list
                         end

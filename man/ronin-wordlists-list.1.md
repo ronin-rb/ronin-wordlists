@@ -18,6 +18,9 @@ Lists the downloaded wordlists.
 `-d`, `--wordlist-dir` *DIR*
   The alternative wordlist directory to search.
 
+`-a`, `--available`
+  Lists built-in wordlists that are available for download.
+
 `-h`, `--help`
   Prints help information.
 
