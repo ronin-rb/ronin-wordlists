@@ -47,6 +47,25 @@ Commands:
     update, up
 ```
 
+List popular wordlists available for download:
+
+```shell
+$ ronin-wordlists list --available
+[ alexa-top-1000 ]
+
+  * URL: https://github.com/urbanadventurer/WhatWeb/blob/master/plugin-development/alexa-top-1000.txt
+  * Categories: DNS, Domains
+  * Summary: The Alexa Top 1000 domain names.
+
+[ subdomains ]
+
+  * URL: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains.txt
+  * Categories: DNS, Subdomains
+  * Summary: List of common subdomain names used by the dnscan util.
+
+...
+```
+
 Download a known wordlist:
 
 ```shell
