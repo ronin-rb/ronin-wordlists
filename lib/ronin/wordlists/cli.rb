@@ -45,6 +45,8 @@ module Ronin
       command_name 'ronin-wordlists'
       version Ronin::Wordlists::VERSION
 
+      command_aliases['install'] = 'download'
+
       command_aliases['ls'] = 'list'
       command_aliases['up'] = 'update'
       command_aliases['rm'] = 'remove'
