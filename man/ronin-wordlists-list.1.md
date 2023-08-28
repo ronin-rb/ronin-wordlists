@@ -11,7 +11,7 @@ Lists the downloaded wordlists.
 ## ARGUMENTS
 
 *NAME*
-	The name of the known wordlist to install.
+	The optional name of the wordlist to search for.
 
 ## OPTIONS
 
