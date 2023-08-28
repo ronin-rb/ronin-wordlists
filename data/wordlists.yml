@@ -127,3 +127,10 @@ trickest:
   :summary: trickest's collection of wordlists.
   :categories:
     - Collection
+
+graphql-wordlist:
+  :url: https://github.com/Escape-Technologies/graphql-wordlist.git
+  :summary: GraphQL wordlists for Operations, field names, type names, etc.
+  :categories:
+    - Collection
+    - GraphQL
