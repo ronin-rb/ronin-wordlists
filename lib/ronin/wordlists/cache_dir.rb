@@ -217,7 +217,7 @@ module Ronin
       #
       # Loads the manifest file.
       #
-      # @return [Hash{String => String}]
+      # @return [Hash{String => Hash{Symbol => String}}]
       #
       def load_manifest
         if File.file?(@manifest_file)
