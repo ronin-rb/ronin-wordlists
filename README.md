@@ -9,6 +9,7 @@
 * [Documentation](https://ronin-rb.dev/docs/ronin-wordlists/frames)
 * [Discord](https://discord.gg/6WAb3PsVX9) |
   [Twitter](https://twitter.com/ronin_rb) |
+  [Mastodon](https://infosec.exchange/@ronin_rb)
 
 ## Description
 
