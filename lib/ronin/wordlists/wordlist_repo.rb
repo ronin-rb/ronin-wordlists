@@ -103,7 +103,7 @@ module Ronin
       # @return [Boolean]
       #
       def git?
-        File.directory(File.join(@path,'.git'))
+        File.directory?(File.join(@path,'.git'))
       end
 
       #

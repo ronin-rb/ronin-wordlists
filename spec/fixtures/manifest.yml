@@ -1,0 +1,13 @@
+---
+example:
+  :type: :git
+  :url: www.example.com
+  :filename: example.txt
+www.example:
+  :type: :file
+  :filename: www.example.com
+  :url: www.example.com
+graphql-wordlist:
+  :type: :git
+  :filename: graphql-wordlist
+  :url: https://github.com/Escape-Technologies/graphql-wordlist.git
