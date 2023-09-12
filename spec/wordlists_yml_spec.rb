@@ -17,7 +17,7 @@ describe "data/wordlists.yml" do
       let(:attributes) { attributes }
 
       it "must have a valid name" do
-        expect(name).to match(/\A[A-Za-z0-9_-]+\z/)
+        expect(name).to match(/\A[A-Za-z0-9]+(?:[._-][A-Za-z0-9]+)*\z/)
       end
 
       it "must contain a Hash of attributes" do
