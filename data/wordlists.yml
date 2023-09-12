@@ -85,6 +85,79 @@ argon:
   :categories:
     - Passwords
 
+hashes.org-2012-2015:
+  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2012-2015.7z
+  :summary: Hashes.org archive of passwords found in 2012 - 2015.
+  :categories:
+    - Passwords
+
+hashes.org-2016:
+  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2016.7z
+  :summary: Hashes.org archive of passwords found in 2016.
+  :categories:
+    - Passwords
+
+hashes.org-2017:
+  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2017.7z
+  :summary: Hashes.org archive of passwords found in 2017.
+  :categories:
+    - Passwords
+
+hashes.org-2018:
+  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2018.7z
+  :summary: Hashes.org archive of passwords found in 2018.
+  :categories:
+    - Passwords
+
+hashes.org-2019:
+  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2019.7z
+  :summary: Hashes.org archive of passwords found in 2019.
+  :categories:
+    - Passwords
+
+hashes.org-2020:
+  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2020.7z
+  :summary: Hashes.org archive of passwords found in 2020.
+  :categories:
+    - Passwords
+
+hashes.org-2021:
+  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2021.txt
+  :summary: Hashes.org archive of passwords found in 2021.
+  :categories:
+    - Passwords
+
+hashkiller-dict:
+  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashkiller-dict.txt
+  :summary: Hashkiller dictionary from hashkiller.io.
+  :categories:
+    - Passwords
+
+DailyQuiz:
+  :url: https://hashmob.net/api/v2/downloads/research/wordlists/DailyQuiz.txt
+  :summary: Passwords from the DailyQuiz.me data breach.
+  :categories:
+    - Passwords
+
+LiveJournal:
+  :url: https://hashmob.net/api/v2/downloads/research/wordlists/LiveJournal.txt
+  :summary: Passwords from the LiveJournal.com data breach.
+  :categories:
+    - Passwords
+
+Top120Million-probable-WPA:
+  :url: https://hashmob.net/api/v2/downloads/research/wordlists/Top120Million-probable-WPA.txt
+  :summary: Old set of popular WPA passwords.
+  :categories:
+    - Passwords
+    - Wifi
+
+zxcvbn:
+  :url: https://hashmob.net/api/v2/downloads/research/wordlists/zxcvbn.txt
+  :summary: Realistic weak passwords.
+  :categories:
+    - Passwords
+
 rockyou:
   :url: https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
   :summary: Common passwords list.
