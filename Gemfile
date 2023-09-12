@@ -7,7 +7,7 @@ platform :jruby do
   gem 'jruby-openssl', '~> 0.7'
 end
 
-# gem 'wordlist', '~> 1.0', github: 'postmodern/wordlist.rb'
+# gem 'wordlist', '~> 1.1', github: 'postmodern/wordlist.rb'
 
 # Ronin dependencies
 gem 'ronin-core', '~> 0.2', github: "ronin-rb/ronin-core",

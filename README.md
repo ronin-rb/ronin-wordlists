@@ -124,7 +124,7 @@ Ronin::Wordlists.list
 ## Requirements
 
 * [Ruby] >= 3.0.0
-* [wordlist] ~> 1.0
+* [wordlist] ~> 1.1
 * [ronin-core] ~> 0.2
 
 ## Install

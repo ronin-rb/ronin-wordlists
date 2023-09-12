@@ -29,7 +29,7 @@ generated_files:
 required_ruby_version: ">= 3.0.0"
 
 dependencies:
-  wordlist: ~> 1.0
+  wordlist: ~> 1.1
   # Ronin dependencies:
   ronin-core: ~> 0.2
 
