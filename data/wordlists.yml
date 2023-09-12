@@ -91,6 +91,35 @@ rockyou:
   :categories:
     - Passwords
 
+weakpass_3:
+  :url: https://download.weakpass.com/wordlists/1947/weakpass_3.7z
+  :summary: Updated Weakpass wordlist for general purpose.
+  :categories:
+    - Passwords
+
+weakpass_3w:
+  :url: https://download.weakpass.com/wordlists/1950/weakpass_3w.7z
+  :summary:
+    Same as weakpass_3p, but passwords length limited from 8 to 24 chars.
+    Specially for fast WI-FI cracking.
+  :categories:
+    - Passwords
+    - Wifi
+
+weakpass_3p:
+  :url: https://download.weakpass.com/wordlists/1949/weakpass_3p.7z
+  :summary: Same as weakpass_3, but passwords contains only printalbe charsets.
+  :categories:
+    - Passwords
+
+weakpass_3a:
+  :url: https://download.weakpass.com/wordlists/1948/weakpass_3a.7z
+  :summary:
+    The most complete compilation of wordlist's - more than 1500 in one.
+    Contains near 8 billion of passwords with length from 4 to 25.	
+  :categories:
+    - Passwords
+
 directory-list-2-3-medium:
   :url: https://github.com/daviddias/node-dirbuster/raw/master/lists/directory-list-2.3-medium.txt
   :summary: Common directory name wordlist used for dirbusting.
