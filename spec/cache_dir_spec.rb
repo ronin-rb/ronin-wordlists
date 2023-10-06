@@ -1,18 +1,20 @@
 require 'spec_helper'
+require 'tmpdir'
 require 'ronin/wordlists/cache_dir'
 require 'ronin/wordlists/exceptions'
 require 'ronin/core/home'
 
 describe Ronin::Wordlists::CacheDir do
   let(:fixtures_dir)  { File.expand_path(File.join(__dir__,'..','spec','fixtures')) }
+  let(:path)          { File.join(fixtures_dir, 'cache_dir') }
   let(:wordlist_path) { File.join(fixtures_dir, 'example_wordlist.txt') }
 
-  subject { described_class.new(fixtures_dir) }
+  subject { described_class.new(path) }
 
   describe "#initialize" do
     it "must initialize #wordlist_dir" do
       expect(subject.wordlist_dir).to be_kind_of(Ronin::Wordlists::WordlistDir)
-      expect(subject.wordlist_dir.path).to eq(File.join(fixtures_dir, 'wordlists'))
+      expect(subject.wordlist_dir.path).to eq(File.join(path, 'wordlists'))
     end
 
     context "when path is passed" do
@@ -38,8 +40,8 @@ describe Ronin::Wordlists::CacheDir do
     context "if wordlist is not found" do
       it "must raise an WordlistNotFound" do
         expect {
-          subject["foo"]
-        }.to raise_error(Ronin::Wordlists::WordlistNotFound, /wordlist not downloaded: "foo"/)
+          subject["invalid_name"]
+        }.to raise_error(Ronin::Wordlists::WordlistNotFound, /wordlist not downloaded: "invalid_name"/)
       end
     end
 
@@ -139,14 +141,14 @@ describe Ronin::Wordlists::CacheDir do
 
   describe "#list" do
     it "must list all wordlists" do
-      expect(subject.list).to eq(["example_wordlist.txt"])
+      expect(subject.list).to eq(["cache_dir_wordlist.txt"])
     end
   end
 
   describe "#open" do
     context "if wordlist with given name exists" do
       it "must open a wordlist file" do
-        expect(subject.open("example_wordlist")).to be_kind_of(Wordlist::File)
+        expect(subject.open("cache_dir_wordlist")).to be_kind_of(Wordlist::File)
       end
     end
 
@@ -161,58 +163,58 @@ describe Ronin::Wordlists::CacheDir do
 
   describe "#download" do
     let(:url) { "https://github.com/Escape-Technologies/graphql-wordlist.git" }
-
-    before do
-      subject.instance_variable_set(:@manifest, { foo: { type: :git, url: "https://github.com/Escape-Technologies/graphql-wordlist.git", filename: "test.txt" } })
-    end
+    let(:dpath) { File.join(path, 'wordlists', 'graphql-wordlist') }
+    let(:wordlist) { Ronin::Wordlists::WordlistRepo.new("bar") }
 
     it "must download wordlist" do
-      # expect(subject).to receive(:system).with('git', 'clone', url).and_return(true)
+      expect(Ronin::Wordlists::WordlistRepo).to receive(:download).and_return(wordlist)
+
+      expect(subject.download(url)).to eq(wordlist)
     end
   end
 
   describe "#update" do
-    it "must call #each" do
-      expect(subject).to receive(:each)
+    let(:name1) { 'foo' }
+    let(:name2) { 'bar' }
+    let(:wordlist1) { Ronin::Wordlists::WordlistFile.new(File.join(subject.wordlist_dir.path,name1)) }
+    let(:wordlist2) { Ronin::Wordlists::WordlistRepo.new(File.join(subject.wordlist_dir.path,name1)) }
+    it "must iterate over all manifests and call #update" do
+      expect(subject).to receive(:[]).with(name1).and_return(wordlist1)
+      expect(subject).to receive(:[]).with(name2).and_return(wordlist2)
+      expect(wordlist1).to receive(:update)
+      expect(wordlist2).to receive(:update)
+
       subject.update
     end
   end
 
   describe "#remove" do
-    let(:wordlist) { subject["example"] }
+    let(:purge_path) { Dir.mktmpdir }
+    let(:path)       { File.join(purge_path, 'spec', 'fixtures', 'cache_dir') }
 
-    it "must deletes wordlist" do
-      # expect(wordlist).to receive(:delete).and_return(true)
+    before do
+      FileUtils.mkdir_p("#{path}/wordlists/foo.txt")
+      FileUtils.cp_r('spec/fixtures/cache_dir/manifest.yml', path)
+    end
+
+    it "must delete wordlist and manifest" do
+      subject.remove("foo")
+      expect(subject.list("fo")).to eq([])
+      expect {
+        subject["foo"]
+      }.to raise_error(Ronin::Wordlists::WordlistNotFound, /wordlist not downloaded: "foo"/)
     end
   end
 
   describe "#purge" do
-    let(:purge_path) { File.join(fixtures_dir, 'purge') }
+    let(:purge_path) { Dir.mktmpdir }
+    let(:path) { File.join(purge_path, 'spec', 'fixtures', 'cache_dir') }
 
-    before { FileUtils.mkdir(purge_path) unless File.directory?(purge_path) }
+    before { FileUtils.cp_r('spec/fixtures/cache_dir', purge_path) }
 
     it "must remove folders" do
-      allow(FileUtils).to receive(:rm_rf).and_return(true)
+      expect(FileUtils).to receive(:rm_rf).with(subject.path).and_return(true)
       subject.purge
-    end
-
-    after { FileUtils.rm_rf(purge_path) }
-  end
-
-  describe "#load_manifest" do
-    context "if #manifest_file exists" do
-      it "must load file" do
-        expect(subject.send(:load_manifest)["example"]).to eq({ filename: "example.txt", type: :git, url: "www.example.com" })
-      end
-    end
-
-    context "if #manifest_file does not exists" do
-      subject { described_class.new(test_path) }
-      let(:test_path) { File.expand_path(File.join(__dir__,'..','spec')) }
-
-      it "must return an empty Hash" do
-        expect(subject.send(:load_manifest)).to eq({})
-      end
     end
   end
 end
