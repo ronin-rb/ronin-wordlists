@@ -163,7 +163,6 @@ describe Ronin::Wordlists::CacheDir do
 
   describe "#download" do
     let(:url) { "https://github.com/Escape-Technologies/graphql-wordlist.git" }
-    let(:dpath) { File.join(path, 'wordlists', 'graphql-wordlist') }
     let(:wordlist) { Ronin::Wordlists::WordlistRepo.new("bar") }
 
     it "must download wordlist" do
@@ -178,6 +177,7 @@ describe Ronin::Wordlists::CacheDir do
     let(:name2) { 'bar' }
     let(:wordlist1) { Ronin::Wordlists::WordlistFile.new(File.join(subject.wordlist_dir.path,name1)) }
     let(:wordlist2) { Ronin::Wordlists::WordlistRepo.new(File.join(subject.wordlist_dir.path,name1)) }
+
     it "must iterate over all manifests and call #update" do
       expect(subject).to receive(:[]).with(name1).and_return(wordlist1)
       expect(subject).to receive(:[]).with(name2).and_return(wordlist2)
@@ -189,28 +189,27 @@ describe Ronin::Wordlists::CacheDir do
   end
 
   describe "#remove" do
-    let(:purge_path) { Dir.mktmpdir }
-    let(:path)       { File.join(purge_path, 'spec', 'fixtures', 'cache_dir') }
+    let(:path) { Dir.mktmpdir('ronin-wordlists-cache-dir') }
 
     before do
-      FileUtils.mkdir_p("#{path}/wordlists/foo.txt")
+      FileUtils.mkdir_p("#{path}/wordlists")
       FileUtils.cp_r('spec/fixtures/cache_dir/manifest.yml', path)
     end
 
     it "must delete wordlist and manifest" do
       subject.remove("foo")
+
       expect(subject.list("fo")).to eq([])
       expect {
         subject["foo"]
-      }.to raise_error(Ronin::Wordlists::WordlistNotFound, /wordlist not downloaded: "foo"/)
+      }.to raise_error(Ronin::Wordlists::WordlistNotFound, "wordlist not downloaded: \"foo\"")
     end
   end
 
   describe "#purge" do
-    let(:purge_path) { Dir.mktmpdir }
-    let(:path) { File.join(purge_path, 'spec', 'fixtures', 'cache_dir') }
+    let(:path) { Dir.mktmpdir('ronin-wordlists-cache-dir') }
 
-    before { FileUtils.cp_r('spec/fixtures/cache_dir', purge_path) }
+    before { FileUtils.cp_r('spec/fixtures/cache_dir', path) }
 
     it "must remove folders" do
       expect(FileUtils).to receive(:rm_rf).with(subject.path).and_return(true)
