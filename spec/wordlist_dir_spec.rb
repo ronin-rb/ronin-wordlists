@@ -56,7 +56,7 @@ describe Ronin::Wordlists::WordlistDir do
 
     context "if argument is not passed" do
       it "must list all wordlists in the wordlist directories" do
-        expect(subject.list).to eq(all_wordlists)
+        expect(subject.list.sort).to eq(all_wordlists.sort)
       end
     end
 
@@ -104,7 +104,7 @@ describe Ronin::Wordlists::WordlistDir do
 
     context "for other urls" do
       let(:url) { "https://raw.githubusercontent.com/rbsec/dnscan/master/tlds.txt" }
-      
+
       it "must download wordlist via WordlistFile" do
         expect(Ronin::Wordlists::WordlistFile).to receive(:download).with(url, subject.path)
         subject.download(url)
@@ -128,7 +128,7 @@ describe Ronin::Wordlists::WordlistDir do
       it "must raise an error" do
         expect {
           subject.delete(name)
-        }.to raise_error(ArgumentError, "unknown wordlist: #{name.inspect}") 
+        }.to raise_error(ArgumentError, "unknown wordlist: #{name.inspect}")
       end
     end
   end
