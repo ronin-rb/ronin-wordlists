@@ -41,7 +41,7 @@ describe Ronin::Wordlists::CacheDir do
       it "must raise an WordlistNotFound" do
         expect {
           subject["invalid_name"]
-        }.to raise_error(Ronin::Wordlists::WordlistNotFound, /wordlist not downloaded: "invalid_name"/)
+        }.to raise_error(Ronin::Wordlists::WordlistNotFound, "wordlist not downloaded: \"invalid_name\"")
       end
     end
 
@@ -53,7 +53,7 @@ describe Ronin::Wordlists::CacheDir do
       it "must raise an InvalidManifestFile" do
         expect {
           subject[:foo]
-        }.to raise_error(Ronin::Wordlists::InvalidManifestFile, /entry :foo is missing a :type attribute/)
+        }.to raise_error(Ronin::Wordlists::InvalidManifestFile, "entry :foo is missing a :type attribute")
       end
     end
 
@@ -65,7 +65,7 @@ describe Ronin::Wordlists::CacheDir do
       it "must raise an InvalidManifestFile" do
         expect {
           subject[:foo]
-        }.to raise_error(Ronin::Wordlists::InvalidManifestFile, /entry :foo is missing a :url attribute/)
+        }.to raise_error(Ronin::Wordlists::InvalidManifestFile, "entry :foo is missing a :url attribute")
       end
     end
 
@@ -77,7 +77,7 @@ describe Ronin::Wordlists::CacheDir do
       it "must raise an InvalidManifestFile" do
         expect {
           subject[:foo]
-        }.to raise_error(Ronin::Wordlists::InvalidManifestFile, /entry :foo is missing a :filename attribute/)
+        }.to raise_error(Ronin::Wordlists::InvalidManifestFile, "entry :foo is missing a :filename attribute")
       end
     end
 
@@ -89,7 +89,7 @@ describe Ronin::Wordlists::CacheDir do
       it "must raise an InvalidManifestFile" do
         expect {
           subject[:foo]
-        }.to raise_error(Ronin::Wordlists::InvalidManifestFile, /unsupported wordlist type: "type"/)
+        }.to raise_error(Ronin::Wordlists::InvalidManifestFile, "unsupported wordlist type: \"type\"")
       end
     end
 
@@ -156,7 +156,7 @@ describe Ronin::Wordlists::CacheDir do
       it "must raise an WordlistNotFound" do
         expect {
           subject.open("foo")
-        }.to raise_error(Ronin::Wordlists::WordlistNotFound, /wordlist not found: "foo"/)
+        }.to raise_error(Ronin::Wordlists::WordlistNotFound, "wordlist not found: \"foo\"")
       end
     end
   end
