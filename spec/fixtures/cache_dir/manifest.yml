@@ -1,0 +1,9 @@
+---
+foo:
+  :type: :git
+  :filename: foo
+  :url: ''
+bar:
+  :type: :git
+  :filename: bar
+  :url: ''
