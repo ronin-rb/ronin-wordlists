@@ -128,7 +128,7 @@ describe Ronin::Wordlists::WordlistDir do
       it "must raise an error" do
         expect {
           subject.delete(name)
-        }.to raise_error(ArgumentError, "unknown wordlist: #{name.inspect}")
+        }.to raise_error(Ronin::Wordlists::WordlistNotFound, "unknown wordlist: #{name.inspect}")
       end
     end
   end

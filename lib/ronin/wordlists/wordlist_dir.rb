@@ -185,7 +185,7 @@ module Ronin
 
           return path
         else
-          raise(ArgumentError,"unknown wordlist: #{name.inspect}")
+          raise(WordlistNotFound,"unknown wordlist: #{name.inspect}")
         end
       end
 
