@@ -74,7 +74,7 @@ module Ronin
       #   Failed to download the wordlist file.
       #
       # @return [WordlistFile]
-      #   The wordlist file.   
+      #   The wordlist file.
       #
       def self.download(url,dest=Dir.pwd)
         dest_path = begin
