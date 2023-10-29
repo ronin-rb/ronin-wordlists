@@ -96,7 +96,7 @@ module Ronin
       def find(name)
         path = File.join(@path,name)
 
-        # check for an exact filenmae match first
+        # check for an exact filename match first
         if File.file?(path)
           path
         else
