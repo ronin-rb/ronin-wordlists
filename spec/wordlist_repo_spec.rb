@@ -28,7 +28,7 @@ describe Ronin::Wordlists::WordlistRepo do
     context "when git clone failed" do
       it "must raise DownloadFailed error" do
         expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(false)
-        
+
         expect {
           described_class.download(url)
         }.to raise_error(Ronin::Wordlists::DownloadFailed, "git command failed: git clone --depth 1 -- #{url} #{repo_path}")
@@ -38,7 +38,7 @@ describe Ronin::Wordlists::WordlistRepo do
     context "when git is not installed" do
       it "must raise DownloadFailed error" do
         expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(nil)
-        
+
         expect {
           described_class.download(url)
         }.to raise_error(Ronin::Wordlists::DownloadFailed, "git is not installed on the system")
@@ -113,7 +113,7 @@ describe Ronin::Wordlists::WordlistRepo do
 
         expect {
           subject.update
-        }.to raise_error(Ronin::Wordlists::DownloadFailed, "git command failed: git pull -C #{subject.path}") 
+        }.to raise_error(Ronin::Wordlists::DownloadFailed, "git command failed: git pull -C #{subject.path}")
       end
     end
 
@@ -123,7 +123,7 @@ describe Ronin::Wordlists::WordlistRepo do
 
         expect {
           subject.update
-        }.to raise_error(Ronin::Wordlists::DownloadFailed, "git is not installed on the system") 
+        }.to raise_error(Ronin::Wordlists::DownloadFailed, "git is not installed on the system")
       end
     end
   end
