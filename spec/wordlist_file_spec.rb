@@ -18,13 +18,14 @@ describe Ronin::Wordlists::WordlistFile do
 
   describe ".download" do
     context "when download succeed" do
-      let(:download_result) { Ronin::Wordlists::WordlistFile.download("valid.com") }
+      let(:download_result) { described_class.download("valid.com") }
 
       before do
         allow(Ronin::Core::System).to receive(:download).and_return("/some/path")
       end
+
       it "must return new WordlistFile" do
-        expect(download_result).to be_kind_of(Ronin::Wordlists::WordlistFile)
+        expect(download_result).to be_kind_of(described_class)
         expect(download_result.path).to eq("/some/path")
         expect(download_result.url).to eq("valid.com")
       end
@@ -34,10 +35,11 @@ describe Ronin::Wordlists::WordlistFile do
       before do
         allow(Ronin::Core::System).to receive(:download).and_raise(Ronin::Wordlists::DownloadFailed, "error message")
       end
+
       it "must raise a DownloadFailed error" do
         expect {
-        Ronin::Wordlists::WordlistFile.download("invalid.com")
-      }.to raise_error(Ronin::Wordlists::DownloadFailed, "error message")
+          described_class.download("invalid.com")
+        }.to raise_error(Ronin::Wordlists::DownloadFailed, "error message")
       end
     end
   end
@@ -57,7 +59,8 @@ describe Ronin::Wordlists::WordlistFile do
   describe "#update" do
     context "if #url is not nil" do
       it "must download wordlist from url" do
-        expect(Ronin::Wordlists::WordlistFile).to receive(:download).with(subject.url, subject.path)
+        expect(described_class).to receive(:download).with(subject.url, subject.path)
+
         subject.update
       end
     end
@@ -66,6 +69,7 @@ describe Ronin::Wordlists::WordlistFile do
   describe "#delete" do
     it "must delete the wordlist" do
       expect(File).to receive(:unlink).with(subject.path)
+
       subject.delete
     end
   end
