@@ -14,14 +14,14 @@ describe Ronin::Wordlists::WordlistRepo do
   end
 
   describe "#download" do
-    let(:repo_path) { File.join(Dir.pwd, "") }
+    let(:repo_path) { "/does/not/exist/" }
     let(:url)       { "https://www.example.com" }
 
     context "when git clone succeed" do
       it "must return new wordlist repo" do
         expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(true)
 
-        expect(described_class.download(url)).to be_kind_of(Ronin::Wordlists::WordlistRepo)
+        expect(described_class.download(url, repo_path)).to be_kind_of(Ronin::Wordlists::WordlistRepo)
       end
     end
 
@@ -30,7 +30,7 @@ describe Ronin::Wordlists::WordlistRepo do
         expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(false)
 
         expect {
-          described_class.download(url)
+          described_class.download(url, repo_path)
         }.to raise_error(Ronin::Wordlists::DownloadFailed, "git command failed: git clone --depth 1 -- #{url} #{repo_path}")
       end
     end
@@ -40,7 +40,7 @@ describe Ronin::Wordlists::WordlistRepo do
         expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(nil)
 
         expect {
-          described_class.download(url)
+          described_class.download(url, repo_path)
         }.to raise_error(Ronin::Wordlists::DownloadFailed, "git is not installed on the system")
       end
     end
@@ -54,8 +54,10 @@ describe Ronin::Wordlists::WordlistRepo do
 
   describe "#git?" do
     context "if wordlist repository use git" do
+      let(:git_dir) { File.join(subject.path, '.git') }
+
       it "must return true" do
-        allow(File).to receive(:directory?).and_return(true)
+        allow(File).to receive(:directory?).with(git_dir).and_return(true)
 
         expect(subject.git?).to eq(true)
       end
@@ -76,7 +78,9 @@ describe Ronin::Wordlists::WordlistRepo do
 
   describe "#url" do
     context "if wordlist repository uses git" do
-      let(:url) { Dir.chdir(subject.path) { `git config --get remote.origin.url`.chomp } }
+      let(:url) do
+        Dir.chdir(subject.path) { `git config --get remote.origin.url`.chomp }
+      end
 
       it "must return its URL" do
         allow(subject).to receive(:git?).and_return(true)
