@@ -20,7 +20,7 @@ describe Ronin::Wordlists::SearchPaths do
       subject { described_class[path1] }
 
       it "must initialize SearchPaths instance" do
-        expect(subject).to be_kind_of(Ronin::Wordlists::SearchPaths)
+        expect(subject).to be_kind_of(described_class)
         expect(subject.paths.map(&:path)).to eq([path1])
       end
     end
@@ -29,7 +29,7 @@ describe Ronin::Wordlists::SearchPaths do
       subject { described_class[path1, path2] }
 
       it "must initialize SearchPaths instance" do
-        expect(subject).to be_kind_of(Ronin::Wordlists::SearchPaths)
+        expect(subject).to be_kind_of(described_class)
         expect(subject.paths.map(&:path)).to eq([path2, path1])
       end
     end
@@ -56,7 +56,7 @@ describe Ronin::Wordlists::SearchPaths do
     end
 
     it "must add a new WordlistDir instance to search paths and return self" do
-      expect(subject).to be_kind_of(Ronin::Wordlists::SearchPaths)
+      expect(subject).to be_kind_of(described_class)
       expect(subject.paths.size).to eq(3)
     end
   end
