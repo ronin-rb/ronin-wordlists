@@ -13,35 +13,70 @@ describe Ronin::Wordlists::WordlistRepo do
     end
   end
 
-  describe "#download" do
-    let(:repo_path) { "/does/not/exist/" }
-    let(:url)       { "https://www.example.com" }
+  describe ".download" do
+    let(:url) { "https://www.example.com" }
 
-    context "when git clone succeed" do
-      it "must return new wordlist repo" do
-        expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(true)
+    context "with given path" do
+      let(:repo_path) { "/does/not/exist/" }
 
-        expect(described_class.download(url, repo_path)).to be_kind_of(Ronin::Wordlists::WordlistRepo)
+      context "when git clone succeed" do
+        it "must return new wordlist repo" do
+          expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(true)
+
+          expect(described_class.download(url, repo_path)).to be_kind_of(Ronin::Wordlists::WordlistRepo)
+        end
+      end
+
+      context "when git clone failed" do
+        it "must raise DownloadFailed error" do
+          expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(false)
+
+          expect {
+            described_class.download(url, repo_path)
+          }.to raise_error(Ronin::Wordlists::DownloadFailed, "git command failed: git clone --depth 1 -- #{url} #{repo_path}")
+        end
+      end
+
+      context "when git is not installed" do
+        it "must raise DownloadFailed error" do
+          expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(nil)
+
+          expect {
+            described_class.download(url, repo_path)
+          }.to raise_error(Ronin::Wordlists::DownloadFailed, "git is not installed on the system")
+        end
       end
     end
 
-    context "when git clone failed" do
-      it "must raise DownloadFailed error" do
-        expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(false)
+    context "without given path" do
+      let(:repo_path) { "#{Dir.pwd}/" }
 
-        expect {
-          described_class.download(url, repo_path)
-        }.to raise_error(Ronin::Wordlists::DownloadFailed, "git command failed: git clone --depth 1 -- #{url} #{repo_path}")
+      context "when git clone succeed" do
+        it "must return new wordlist repo" do
+          expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(true)
+
+          expect(described_class.download(url)).to be_kind_of(Ronin::Wordlists::WordlistRepo)
+        end
       end
-    end
 
-    context "when git is not installed" do
-      it "must raise DownloadFailed error" do
-        expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(nil)
+      context "when git clone failed" do
+        it "must raise DownloadFailed error" do
+          expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(false)
 
-        expect {
-          described_class.download(url, repo_path)
-        }.to raise_error(Ronin::Wordlists::DownloadFailed, "git is not installed on the system")
+          expect {
+            described_class.download(url)
+          }.to raise_error(Ronin::Wordlists::DownloadFailed, "git command failed: git clone --depth 1 -- #{url} #{repo_path}")
+        end
+      end
+
+      context "when git is not installed" do
+        it "must raise DownloadFailed error" do
+          expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(nil)
+
+          expect {
+            described_class.download(url)
+          }.to raise_error(Ronin::Wordlists::DownloadFailed, "git is not installed on the system")
+        end
       end
     end
   end
