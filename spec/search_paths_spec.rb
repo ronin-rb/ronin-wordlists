@@ -55,8 +55,7 @@ describe Ronin::Wordlists::SearchPaths do
       subject << path1
     end
 
-    it "must add a new WordlistDir instance to search paths and return self" do
-      expect(subject).to be_kind_of(described_class)
+    it "must add a new WordlistDir instance to search paths" do
       expect(subject.paths.size).to eq(3)
     end
   end
@@ -74,7 +73,7 @@ describe Ronin::Wordlists::SearchPaths do
   end
 
   describe "#list" do
-    let(:all_wordlists) { [*Dir.children(path1), *Dir.children(path2)] }
+    let(:all_wordlists) { Dir.children(path1) + Dir.children(path2) }
 
     context "if argument is not passed" do
       it "must list all wordlists in the wordlist directories" do
@@ -95,12 +94,14 @@ describe Ronin::Wordlists::SearchPaths do
 
   describe "#open" do
     context "if wordlist exist" do
+      let(:wordlist_name)         { "example_wordlist" }
       let(:example_wrodlist_path) { File.join(path1, "example_wordlist.txt") }
 
       it "must call .open on Wordlist with path" do
-        expect(Wordlist).to receive(:open).with(example_wrodlist_path)
+        wordlist = subject.open(wordlist_name)
 
-        subject.open("example_wordlist")
+        expect(wordlist).to be_kind_of(Wordlist::File)
+        expect(wordlist.path).to eq(example_wrodlist_path)
       end
     end
 
