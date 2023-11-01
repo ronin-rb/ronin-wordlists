@@ -52,12 +52,19 @@ describe Ronin::Wordlists::SearchPaths do
   end
 
   describe "#<<" do
+    let(:new_path) { "/path/to/new_wordlist_dir" }
+
     before do
-      subject << path1
+      subject << new_path
     end
 
     it "must add a new WordlistDir instance to search paths" do
-      expect(subject.paths.size).to eq(3)
+      expect(subject.paths.length).to eq(3)
+      expect(subject.paths).to all(be_kind_of(Ronin::Wordlists::WordlistDir))
+    end
+
+    it "must prepend the new path to the search paths, so that it takes precedence" do
+      expect(subject.paths.map(&:path)).to eq([new_path, path2, path1])
     end
   end
 
