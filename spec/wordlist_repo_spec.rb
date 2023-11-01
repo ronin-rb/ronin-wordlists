@@ -25,7 +25,7 @@ describe Ronin::Wordlists::WordlistRepo do
         it "must return new wordlist repo" do
           expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(true)
 
-          expect(described_class.download(url, repo_path)).to be_kind_of(Ronin::Wordlists::WordlistRepo)
+          expect(described_class.download(url, repo_path)).to be_kind_of(described_class)
         end
       end
 
@@ -57,7 +57,7 @@ describe Ronin::Wordlists::WordlistRepo do
         it "must return new wordlist repo" do
           expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(true)
 
-          expect(described_class.download(url)).to be_kind_of(Ronin::Wordlists::WordlistRepo)
+          expect(described_class.download(url)).to be_kind_of(described_class)
         end
       end
 
