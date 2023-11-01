@@ -16,19 +16,19 @@ describe Ronin::Wordlists::SearchPaths do
   end
 
   describe ".[]" do
-    context "for single path" do
+    context "when given a single path argument" do
       subject { described_class[path1] }
 
-      it "must initialize SearchPaths instance" do
+      it "must initialize #{described_class} instance with the single path" do
         expect(subject).to be_kind_of(described_class)
         expect(subject.paths.map(&:path)).to eq([path1])
       end
     end
 
-    context "for multiple paths" do
+    context "when given multiple path arguments" do
       subject { described_class[path1, path2] }
 
-      it "must initialize SearchPaths instance" do
+      it "must initialize the #{described_class} instance with the paths" do
         expect(subject).to be_kind_of(described_class)
         expect(subject.paths.map(&:path)).to eq([path2, path1])
       end
@@ -75,25 +75,29 @@ describe Ronin::Wordlists::SearchPaths do
   describe "#list" do
     let(:all_wordlists) { Dir.children(path1) + Dir.children(path2) }
 
-    context "if argument is not passed" do
+    context "when no arguments are given" do
       it "must list all wordlists in the wordlist directories" do
         expect(subject.list).to eq(Set.new(all_wordlists))
       end
     end
 
-    context "if argument is passed" do
-      it "and file is found, it must return wordlist filename" do
-        expect(subject.list("foo_wordlist")).to eq(Set.new(["foo_wordlist.txt"]))
+    context "when an argument is given" do
+      context "and the wordlist file is found" do
+        it "must return wordlist filename" do
+          expect(subject.list("foo_wordlist")).to eq(Set.new(["foo_wordlist.txt"]))
+        end
       end
 
-      it "but file is not found, it must return an empty Set" do
-        expect(subject.list("invalid_wordlist")).to eq(Set.new([]))
+      context "but the wordlist file is not found" do
+        it "must return an empty Set" do
+          expect(subject.list("invalid_wordlist")).to eq(Set.new([]))
+        end
       end
     end
   end
 
   describe "#open" do
-    context "if wordlist exist" do
+    context "when the wordlist file is found" do
       let(:wordlist_name)         { "example_wordlist" }
       let(:example_wrodlist_path) { File.join(path1, "example_wordlist.txt") }
 
@@ -105,7 +109,7 @@ describe Ronin::Wordlists::SearchPaths do
       end
     end
 
-    context "if wordlist does not exist" do
+    context "but the wordlist file is not found" do
       let(:filename) { "foo_bar_baz" }
 
       it "must raise a WordlistNotFound error" do

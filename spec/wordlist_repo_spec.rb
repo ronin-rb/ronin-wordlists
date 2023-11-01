@@ -16,10 +16,10 @@ describe Ronin::Wordlists::WordlistRepo do
   describe ".download" do
     let(:url) { "https://www.example.com" }
 
-    context "with given path" do
+    context "with given a URL and a path" do
       let(:repo_path) { "/does/not/exist/" }
 
-      context "when git clone succeed" do
+      context "when `git clone` succeeded" do
         it "must return new wordlist repo" do
           expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(true)
 
@@ -27,7 +27,7 @@ describe Ronin::Wordlists::WordlistRepo do
         end
       end
 
-      context "when git clone failed" do
+      context "but `git clone` failed" do
         it "must raise DownloadFailed error" do
           expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(false)
 
@@ -37,7 +37,7 @@ describe Ronin::Wordlists::WordlistRepo do
         end
       end
 
-      context "when git is not installed" do
+      context "but `git` is not installed" do
         it "must raise DownloadFailed error" do
           expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(nil)
 
@@ -48,10 +48,10 @@ describe Ronin::Wordlists::WordlistRepo do
       end
     end
 
-    context "without given path" do
+    context "when only given a URL" do
       let(:repo_path) { "#{Dir.pwd}/" }
 
-      context "when git clone succeed" do
+      context "when `git clone` succeeded" do
         it "must return new wordlist repo" do
           expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(true)
 
@@ -59,7 +59,7 @@ describe Ronin::Wordlists::WordlistRepo do
         end
       end
 
-      context "when git clone failed" do
+      context "but `git clone` failed" do
         it "must raise DownloadFailed error" do
           expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(false)
 
@@ -69,7 +69,7 @@ describe Ronin::Wordlists::WordlistRepo do
         end
       end
 
-      context "when git is not installed" do
+      context "but `git` is not installed" do
         it "must raise DownloadFailed error" do
           expect(described_class).to receive(:system).with('git', 'clone', '--depth', '1', '--', url, repo_path).and_return(nil)
 
@@ -88,7 +88,7 @@ describe Ronin::Wordlists::WordlistRepo do
   end
 
   describe "#git?" do
-    context "if wordlist repository use git" do
+    context "when the wordlist repository is a git repository" do
       let(:git_dir) { File.join(subject.path, '.git') }
 
       it "must return true" do
@@ -98,7 +98,7 @@ describe Ronin::Wordlists::WordlistRepo do
       end
     end
 
-    context "if wordlist reposiftory does not use" do
+    context "when the wordlist repository is a plain directory" do
       it "must return false" do
         expect(subject.git?).to eq(false)
       end
@@ -112,7 +112,7 @@ describe Ronin::Wordlists::WordlistRepo do
   end
 
   describe "#url" do
-    context "if wordlist repository uses git" do
+    context "when the wordlist repository is a git repository" do
       let(:url) do
         Dir.chdir(subject.path) { `git config --get remote.origin.url`.chomp }
       end
@@ -124,7 +124,7 @@ describe Ronin::Wordlists::WordlistRepo do
       end
     end
 
-    context "if wordlist repository does not use git" do
+    context "when the wordlist repository is a plain directory" do
       it "must return nil" do
         allow(subject).to receive(:git?).and_return(false)
 
@@ -138,7 +138,7 @@ describe Ronin::Wordlists::WordlistRepo do
       allow(subject).to receive(:git?).and_return(true)
     end
 
-    context "when git pull succeed" do
+    context "when `git pull` succeeded" do
       it "must return true" do
         expect(subject).to receive(:system).with('git', 'pull', '-C', subject.path).and_return(true)
 
@@ -146,7 +146,7 @@ describe Ronin::Wordlists::WordlistRepo do
       end
     end
 
-    context "when git command failed" do
+    context "but `git pull` failed" do
       it "must raise DownloadFailed error" do
         expect(subject).to receive(:system).with('git', 'pull', '-C', subject.path).and_return(false)
 
@@ -156,7 +156,7 @@ describe Ronin::Wordlists::WordlistRepo do
       end
     end
 
-    context "when git is not installed" do
+    context "but `git` is not installed" do
       it "must raise DownloadFailed error" do
         expect(subject).to receive(:system).with('git', 'pull', '-C', subject.path).and_return(nil)
 
@@ -168,7 +168,7 @@ describe Ronin::Wordlists::WordlistRepo do
   end
 
   describe "#delete" do
-    it "must delete the wordlist repository" do
+    it "must delete the wordlist repository directory" do
       expect(FileUtils).to receive(:rm_rf).with(subject.path)
 
       subject.delete
