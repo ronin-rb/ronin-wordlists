@@ -4,7 +4,8 @@ require 'ronin/wordlists/wordlist_repo'
 describe Ronin::Wordlists::WordlistRepo do
   subject { described_class.new(path) }
 
-  let(:path) { File.expand_path(File.join(__dir__, '..', 'spec', 'fixtures', 'wordlists')) }
+  let(:fixtures_dir) { File.expand_path(File.join(__dir__, '..', 'spec', 'fixtures')) }
+  let(:path) { File.join(fixtures_dir, 'wordlists') }
 
   describe "#initialize" do
     it "must initialize #path and #name" do

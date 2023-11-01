@@ -5,7 +5,8 @@ require 'ronin/core/system'
 describe Ronin::Wordlists::WordlistFile do
   subject { described_class.new(path, url: url) }
 
-  let(:path) { File.expand_path(File.join(__dir__, '..', 'spec', 'fixtures', 'wordlists')) }
+  let(:fixtures_dir) { File.expand_path(File.join(__dir__, '..', 'spec', 'fixtures')) }
+  let(:path) { File.join(fixtures_dir, 'wordlists') }
   let(:url) { "www.example.com" }
 
   describe "#initialzie" do

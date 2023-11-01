@@ -5,8 +5,9 @@ require 'ronin/wordlists/exceptions'
 describe Ronin::Wordlists::SearchPaths do
   subject { described_class.new([path1, path2]) }
 
-  let(:path1) { File.expand_path(File.join(__dir__, '..', 'spec', 'fixtures', 'wordlists')) }
-  let(:path2) { File.expand_path(File.join(__dir__, '..', 'spec', 'fixtures', 'extra_wordlists')) }
+  let(:fixtures_dir) { File.expand_path(File.join(__dir__, '..', 'spec', 'fixtures')) }
+  let(:path1) { File.join(fixtures_dir, 'wordlists') }
+  let(:path2) { File.join(fixtures_dir, 'extra_wordlists') }
 
   describe "#initialize" do
     it "must initialize #paths and call #<< for each one" do
