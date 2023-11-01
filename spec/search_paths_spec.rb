@@ -6,6 +6,7 @@ describe Ronin::Wordlists::SearchPaths do
   subject { described_class.new([path1, path2]) }
 
   let(:fixtures_dir) { File.expand_path(File.join(__dir__, '..', 'spec', 'fixtures')) }
+
   let(:path1) { File.join(fixtures_dir, 'wordlists') }
   let(:path2) { File.join(fixtures_dir, 'extra_wordlists') }
 
@@ -39,7 +40,12 @@ describe Ronin::Wordlists::SearchPaths do
   end
 
   describe "#each" do
-    let(:wordlist_dirs) { [Ronin::Wordlists::WordlistDir.new(path2), Ronin::Wordlists::WordlistDir.new(path1)] }
+    let(:wordlist_dirs) do
+      [
+        Ronin::Wordlists::WordlistDir.new(path2),
+        Ronin::Wordlists::WordlistDir.new(path1)
+      ]
+    end
 
     it "must iterate over #paths and yield each directory" do
       yielded_values = []
@@ -56,9 +62,7 @@ describe Ronin::Wordlists::SearchPaths do
   describe "#<<" do
     let(:new_path) { "/path/to/new_wordlist_dir" }
 
-    before do
-      subject << new_path
-    end
+    before { subject << new_path }
 
     it "must add a new WordlistDir instance to search paths" do
       expect(subject.paths.length).to eq(3)

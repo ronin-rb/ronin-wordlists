@@ -5,7 +5,8 @@ require 'ronin/wordlists/exceptions'
 require 'ronin/core/home'
 
 describe Ronin::Wordlists::CacheDir do
-  let(:fixtures_dir)  { File.expand_path(File.join(__dir__,'..','spec','fixtures')) }
+  let(:fixtures_dir) { File.expand_path(File.join(__dir__,'..','spec','fixtures')) }
+
   let(:path)          { File.join(fixtures_dir, 'cache_dir') }
   let(:wordlist_path) { File.join(fixtures_dir, 'example_wordlist.txt') }
 
@@ -162,7 +163,7 @@ describe Ronin::Wordlists::CacheDir do
   end
 
   describe "#download" do
-    let(:url) { "https://github.com/Escape-Technologies/graphql-wordlist.git" }
+    let(:url)      { "https://github.com/Escape-Technologies/graphql-wordlist.git" }
     let(:wordlist) { Ronin::Wordlists::WordlistRepo.new("bar") }
 
     it "must download the wordlist" do
@@ -173,8 +174,9 @@ describe Ronin::Wordlists::CacheDir do
   end
 
   describe "#update" do
-    let(:name1) { 'foo' }
-    let(:name2) { 'bar' }
+    let(:name1)     { 'foo' }
+    let(:name2)     { 'bar' }
+
     let(:wordlist1) { Ronin::Wordlists::WordlistFile.new(File.join(subject.wordlist_dir.path,name1)) }
     let(:wordlist2) { Ronin::Wordlists::WordlistRepo.new(File.join(subject.wordlist_dir.path,name1)) }
 
@@ -200,6 +202,7 @@ describe Ronin::Wordlists::CacheDir do
       subject.remove("foo")
 
       expect(subject.list("fo")).to eq([])
+
       expect {
         subject["foo"]
       }.to raise_error(Ronin::Wordlists::WordlistNotFound, "wordlist not downloaded: \"foo\"")

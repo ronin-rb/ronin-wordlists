@@ -6,8 +6,9 @@ describe Ronin::Wordlists::WordlistFile do
   subject { described_class.new(path, url: url) }
 
   let(:fixtures_dir) { File.expand_path(File.join(__dir__, '..', 'spec', 'fixtures')) }
+
   let(:path) { File.join(fixtures_dir, 'wordlists') }
-  let(:url) { "www.example.com" }
+  let(:url)  { "www.example.com" }
 
   describe "#initialzie" do
     it "must initialize #path, #name, and #url" do
