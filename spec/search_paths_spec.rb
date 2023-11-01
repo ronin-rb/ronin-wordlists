@@ -20,8 +20,9 @@ describe Ronin::Wordlists::SearchPaths do
     context "when given a single path argument" do
       subject { described_class[path1] }
 
-      it "must initialize #{described_class} instance with the single path" do
+      it "must initialize #paths to be a single WordlistDir with the single path" do
         expect(subject).to be_kind_of(described_class)
+        expect(subject.paths).to all(be_kind_of(Ronin::Wordlists::WordlistDir))
         expect(subject.paths.map(&:path)).to eq([path1])
       end
     end
@@ -29,8 +30,9 @@ describe Ronin::Wordlists::SearchPaths do
     context "when given multiple path arguments" do
       subject { described_class[path1, path2] }
 
-      it "must initialize the #{described_class} instance with the paths" do
+      it "must initialize #paths to be an Array of WordlistDirs with the given paths" do
         expect(subject).to be_kind_of(described_class)
+        expect(subject.paths).to all(be_kind_of(Ronin::Wordlists::WordlistDir))
         expect(subject.paths.map(&:path)).to eq([path2, path1])
       end
     end
