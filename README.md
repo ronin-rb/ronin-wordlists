@@ -39,6 +39,7 @@ Arguments:
     [ARGS ...]                       Additional arguments for the command
 
 Commands:
+    completion
     download
     help
     list, ls
