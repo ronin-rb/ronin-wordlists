@@ -197,7 +197,7 @@ directory-list-2-3-medium:
   :url: https://github.com/daviddias/node-dirbuster/raw/master/lists/directory-list-2.3-medium.txt
   :summary: Common directory name wordlist used for dirbusting.
   :categories:
-    - dirbusting
+    - Directories
 
 SecLists:
   :url: https://github.com/danielmiessler/SecLists.git
