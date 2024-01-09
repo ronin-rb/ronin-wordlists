@@ -211,6 +211,12 @@ ws-files:
   :categories:
     - Files
 
+xajkep-wordlists:
+  :url: https://github.com/xajkep/wordlists.git
+  :summary: xajkep's wordlists.
+  :categories:
+    - Collection
+
 SecLists:
   :url: https://github.com/danielmiessler/SecLists.git
   :summary: The SecLists repository of pentester wordlists.
