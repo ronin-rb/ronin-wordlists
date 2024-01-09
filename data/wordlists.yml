@@ -199,6 +199,12 @@ directory-list-2-3-medium:
   :categories:
     - Directories
 
+ws-dirs:
+  :url: https://raw.githubusercontent.com/3ndG4me/KaliLists/master/wfuzz/webservices/ws-dirs.txt
+  :summary: wfuzz webservices directories' wordlist.
+  :categories:
+    - Directories
+
 SecLists:
   :url: https://github.com/danielmiessler/SecLists.git
   :summary: The SecLists repository of pentester wordlists.
