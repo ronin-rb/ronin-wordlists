@@ -205,6 +205,12 @@ ws-dirs:
   :categories:
     - Directories
 
+ws-files:
+  :url: https://raw.githubusercontent.com/3ndG4me/KaliLists/master/wfuzz/webservices/ws-files.txt
+  :summary: wfuzz webservices files' wordlist.
+  :categories:
+    - Files
+
 SecLists:
   :url: https://github.com/danielmiessler/SecLists.git
   :summary: The SecLists repository of pentester wordlists.
