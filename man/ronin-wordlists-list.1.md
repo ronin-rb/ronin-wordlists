@@ -41,4 +41,4 @@ Postmodern <postmodern.mod3@gmail.com>
 
 ## SEE ALSO
 
-[ronin-wordlists-download](ronin-wordlists-download.1.md) [ronin-wordlists-list](ronin-wordlists-list.1.md) [ronin-wordlists-remove](ronin-wordlists-remove.1.md) [ronin-wordlists-update](ronin-wordlists-update.1.md)
+[ronin-wordlists-download](ronin-wordlists-download.1.md) [ronin-wordlists-remove](ronin-wordlists-remove.1.md) [ronin-wordlists-update](ronin-wordlists-update.1.md)
