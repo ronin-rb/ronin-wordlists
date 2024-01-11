@@ -19,56 +19,45 @@
 #
 
 require 'ronin/wordlists/cli/command'
-require 'ronin/wordlists/cli/wordlist_dir_option'
-require 'ronin/wordlists'
+
+require 'yaml'
 
 module Ronin
   module Wordlists
     class CLI
       module Commands
         #
-        # Lists installed wordlists on the system.
+        # Lists wordlists available for download or installation.
         #
         # ## Usage
         #
-        #     ronin-wordlists list [options] [NAME]
+        #     ronin-wordlists available [options]
         #
         # ## Options
         #
-        #     -d, --wordlist-dir DIR           The wordlist directory
         #     -h, --help                       Print help information
         #
-        # ## Arguments
-        #
-        #     [NAME]                           Optional wordlist name to search for
-        #
-        class List < Command
+        class Available < Command
 
-          include WordlistDirOption
+          usage '[options]'
 
-          usage '[options] [NAME]'
+          description 'Lists wordlists available for download or installation'
 
-          argument :name, required: false,
-                          usage:    'NAME',
-                          desc:     'Optional wordlist name to search for'
-
-          description 'Lists installed wordlists on the system'
-
-          man_page 'ronin-wordlists-list.1'
+          man_page 'ronin-wordlists-available.1'
 
           #
-          # Runs the `ronin-wordlists list` command.
+          # Runs the `ronin-wordlists available` command.
           #
-          # @param [String, nil] name
-          #   The optional wordlist name.
-          #
-          def run(name=nil)
-            wordlists = if name then wordlist_dir.list(name)
-                        else         wordlist_dir.list
-                        end
+          def run
+            wordlists = YAML.load_file(File.join(ROOT,'data','wordlists.yml'))
 
-            wordlists.each do |wordlist|
-              puts "  #{wordlist}"
+            wordlists.each do |name,attributes|
+              puts "[ #{name} ]"
+              puts
+              puts "  * URL: #{attributes[:url]}"
+              puts "  * Categories: #{attributes[:categories].join(', ')}"
+              puts "  * Summary: #{attributes[:summary]}"
+              puts
             end
           end
 

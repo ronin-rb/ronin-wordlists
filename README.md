@@ -39,6 +39,7 @@ Arguments:
     [ARGS ...]                       Additional arguments for the command
 
 Commands:
+    available
     completion
     download
     help
@@ -48,10 +49,10 @@ Commands:
     update, up
 ```
 
-List popular wordlists available for download:
+List popular wordlists available for download or installation:
 
 ```shell
-$ ronin-wordlists list --available
+$ ronin-wordlists available
 [ alexa-top-1000 ]
 
   * URL: https://github.com/urbanadventurer/WhatWeb/blob/master/plugin-development/alexa-top-1000.txt
