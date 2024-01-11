@@ -41,7 +41,7 @@ Arguments:
 Commands:
     available
     completion
-    download
+    download, install
     help
     list, ls
     purge
