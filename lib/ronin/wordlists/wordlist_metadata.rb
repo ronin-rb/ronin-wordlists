@@ -20,6 +20,9 @@
 
 module Ronin
   module Wordlists
+    #
+    # Common wordlist metadata attributes.
+    #
     module WordlistMetadata
       # The optional URL for the wordlist.
       #
