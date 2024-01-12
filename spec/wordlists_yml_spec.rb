@@ -28,8 +28,10 @@ describe "data/wordlists.yml" do
         expect(attributes.keys).to all(be_kind_of(Symbol))
       end
 
-      it "must have a valid :url" do
-        expect(attributes[:url]).to match(/\A#{URI::DEFAULT_PARSER.make_regexp(%w[http https])}\z/)
+      describe ":url" do
+        it "must be a http:// or https:// URL" do
+          expect(attributes[:url]).to match(/\A#{URI::DEFAULT_PARSER.make_regexp(%w[http https])}\z/)
+        end
       end
 
       it "must have :categories" do
@@ -38,14 +40,21 @@ describe "data/wordlists.yml" do
         expect(attributes[:categories]).to all(be_kind_of(String))
       end
 
-      it "all :categories must be lowercase words" do
-        expect(attributes[:categories]).to all(match(/\A[a-z][a-z0-9_-]+\z/))
+      describe ":categories" do
+        it "must contain lowercase words" do
+          expect(attributes[:categories]).to all(match(/\A[a-z][a-z0-9_-]+\z/))
+        end
       end
 
       it "must have a :summary" do
         expect(attributes[:summary]).to be_kind_of(String)
         expect(attributes[:summary]).to_not be_empty
-        expect(attributes[:summary]).to end_with('.')
+      end
+
+      describe ":summary" do
+        it "must end with a period" do
+          expect(attributes[:summary]).to end_with('.')
+        end
       end
     end
   end
