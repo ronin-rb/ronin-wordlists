@@ -18,6 +18,7 @@
 # along with ronin-wordlists.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+require 'ronin/wordlists/wordlist_metadata'
 require 'ronin/wordlists/exceptions'
 require 'ronin/core/system'
 
@@ -31,6 +32,8 @@ module Ronin
     #
     class WordlistFile
 
+      include WordlistMetadata
+
       # The path to the wordlist file.
       #
       # @return [String]
@@ -41,24 +44,24 @@ module Ronin
       # @return [String]
       attr_reader :name
 
-      # The optional URL for the wordlist file.
-      #
-      # @return [String, nil]
-      attr_reader :url
-
       #
       # Initializes the wordlist file.
       #
       # @param [String] path
       #   The path to the wordlist file.
       #
-      # @param [String, nil] url
+      # @param [Hash{Symbol => Object}] kwargs
+      #   Additional metadata keyword arguments for
+      #   {WordlistMetadata#initialize}.
+      #
+      # @option kwargs [String, nil] :url
       #   The optional URL for the wordlist file.
       #
-      def initialize(path, url: nil)
+      def initialize(path,**kwargs)
+        super(**kwargs)
+
         @path = path
         @name = File.basename(@path,File.extname(@path))
-        @url  = url
       end
 
       #

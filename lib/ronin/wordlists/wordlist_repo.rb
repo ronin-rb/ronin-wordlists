@@ -18,6 +18,7 @@
 # along with ronin-wordlists.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+require 'ronin/wordlists/wordlist_metadata'
 require 'ronin/wordlists/exceptions'
 
 require 'fileutils'
@@ -29,6 +30,8 @@ module Ronin
     # Represents a git repository of wordlists.
     #
     class WordlistRepo
+
+      include WordlistMetadata
 
       # The path to the wordlist repository.
       #
@@ -46,14 +49,19 @@ module Ronin
       # @param [String] path
       #   The path to the wordlist repository.
       #
-      # @param [String, nil] url
+      # @param [Hash{Symbol => Object}] kwargs
+      #   Additional metadata keyword arguments for
+      #   {WordlistMetadata#initialize}.
+      #
+      # @option kwargs [String, nil] :url
       #   The optional URL of the wordlist repository.
       #   If no URL is given, {#url} will infer it from the git repository.
       #
-      def initialize(path, url: nil)
+      def initialize(path,**kwargs)
+        super(**kwargs)
+
         @path = path
         @name = File.basename(@path)
-        @url  = url
       end
 
       #

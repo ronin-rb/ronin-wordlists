@@ -1,17 +1,35 @@
 require 'spec_helper'
 require 'ronin/wordlists/wordlist_repo'
 
+require_relative 'wordlist_metadata_examples'
+
 describe Ronin::Wordlists::WordlistRepo do
   subject { described_class.new(path) }
 
   let(:fixtures_dir) { File.expand_path(File.join(__dir__, '..', 'spec', 'fixtures')) }
 
   let(:path) { File.join(fixtures_dir, 'wordlists') }
+  let(:url)  { "https://www.example.com/wordlist" }
 
   describe "#initialize" do
-    it "must initialize #path and #name" do
+    it "must initialize #path" do
       expect(subject.path).to eq(path)
-      expect(subject.name).to eq("wordlists")
+    end
+
+    it "must default #name to the basename of #path" do
+      expect(subject.name).to eq(File.basename(path))
+    end
+
+    include_context "WordlistMetadata#initialize"
+
+    context "when the url: keyword is given" do
+      subject { described_class.new(path, url: url) }
+
+      it "must initialize #path, #name, and #url" do
+        expect(subject.path).to eq(path)
+        expect(subject.name).to eq(File.basename(path))
+        expect(subject.url).to eq(url)
+      end
     end
   end
 
