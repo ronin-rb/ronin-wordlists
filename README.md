@@ -56,13 +56,13 @@ $ ronin-wordlists available
 [ alexa-top-1000 ]
 
   * URL: https://github.com/urbanadventurer/WhatWeb/blob/master/plugin-development/alexa-top-1000.txt
-  * Categories: DNS, Domains
+  * Categories: dns, domains
   * Summary: The Alexa Top 1000 domain names.
 
 [ subdomains ]
 
   * URL: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains.txt
-  * Categories: DNS, Subdomains
+  * Categories: dns, subdomains
   * Summary: List of common subdomain names used by the dnscan util.
 
 ...

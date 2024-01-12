@@ -38,6 +38,10 @@ describe "data/wordlists.yml" do
         expect(attributes[:categories]).to all(be_kind_of(String))
       end
 
+      it "all :categories must be lowercase words" do
+        expect(attributes[:categories]).to all(match(/\A[a-z][a-z0-9_-]+\z/))
+      end
+
       it "must have a :summary" do
         expect(attributes[:summary]).to be_kind_of(String)
         expect(attributes[:summary]).to_not be_empty

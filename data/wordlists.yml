@@ -13,162 +13,162 @@ alexa-top-1000:
   :url: https://github.com/urbanadventurer/WhatWeb/blob/master/plugin-development/alexa-top-1000.txt
   :summary: The Alexa Top 1000 domain names.
   :categories:
-    - DNS
-    - Domains
+    - dns
+    - domains
 
 subdomains:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains.txt
   :summary: List of common subdomain names used by the dnscan util.
   :categories:
-    - DNS
-    - Subdomains
+    - dns
+    - subdomains
 
 subdomains-100:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-100.txt
   :summary: Top 100 most common subdomain names used by the dnscan util.
   :categories:
-    - DNS
-    - Subdomains
+    - dns
+    - subdomains
 
 subdomains-500:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-500.txt
   :summary: Top 500 most common subdomain names used by the dnscan util.
   :categories:
-    - DNS
-    - Subdomains
+    - dns
+    - subdomains
 
 subdomains-1000:
   :url: https:/raw.githubusercontent./com/rbsec/dnscan/master/subdomains-1000.txt
   :summary: Top 1000 most common subdomain names used by the dnscan util.
   :categories:
-    - DNS
-    - Subdomains
+    - dns
+    - subdomains
 
 subdomains-10000:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-10000.txt
   :summary: Top 10000 most common subdomain names used by the dnscan util.
   :categories:
-    - DNS
-    - Subdomains
+    - dns
+    - subdomains
 
 subdomains-uk-500:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-uk-500.txt
   :summary: Top 500 most common UK subdomain names used by the dnscan util.
   :categories:
-    - DNS
-    - Subdomains
+    - dns
+    - subdomains
 
 subdomains-uk-1000:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-uk-1000.txt
   :summary: Top 1000 most common UK subdomain names used by the dnscan util.
   :categories:
-    - DNS
-    - Subdomains
+    - dns
+    - subdomains
 
 suffixes:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/suffixes.txt
   :summary: List of common domain suffixes used by the dnscan util.
   :categories:
-    - DNS
-    - Public Suffixes
+    - dns
+    - public-suffixes
 
 tlds:
   :url: https://raw.githubusercontent.com/rbsec/dnscan/master/tlds.txt
   :summary: List of common TLDs used by the dnscan util.
   :categories:
-    - DNS
-    - TLDs
+    - dns
+    - tlds
 
 argon:
   :url: http://www.mediafire.com/file/zd3zhzfezl9wd96/Argon_Wordlist_v2.gz
   :summary: Really big password list.
   :categories:
-    - Passwords
+    - passwords
 
 hashes.org-2012-2015:
   :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2012-2015.7z
   :summary: Hashes.org archive of passwords found in 2012 - 2015.
   :categories:
-    - Passwords
+    - passwords
 
 hashes.org-2016:
   :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2016.7z
   :summary: Hashes.org archive of passwords found in 2016.
   :categories:
-    - Passwords
+    - passwords
 
 hashes.org-2017:
   :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2017.7z
   :summary: Hashes.org archive of passwords found in 2017.
   :categories:
-    - Passwords
+    - passwords
 
 hashes.org-2018:
   :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2018.7z
   :summary: Hashes.org archive of passwords found in 2018.
   :categories:
-    - Passwords
+    - passwords
 
 hashes.org-2019:
   :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2019.7z
   :summary: Hashes.org archive of passwords found in 2019.
   :categories:
-    - Passwords
+    - passwords
 
 hashes.org-2020:
   :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2020.7z
   :summary: Hashes.org archive of passwords found in 2020.
   :categories:
-    - Passwords
+    - passwords
 
 hashes.org-2021:
   :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2021.txt
   :summary: Hashes.org archive of passwords found in 2021.
   :categories:
-    - Passwords
+    - passwords
 
 hashkiller-dict:
   :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashkiller-dict.txt
   :summary: Hashkiller dictionary from hashkiller.io.
   :categories:
-    - Passwords
+    - passwords
 
 DailyQuiz:
   :url: https://hashmob.net/api/v2/downloads/research/wordlists/DailyQuiz.txt
   :summary: Passwords from the DailyQuiz.me data breach.
   :categories:
-    - Passwords
+    - passwords
 
 LiveJournal:
   :url: https://hashmob.net/api/v2/downloads/research/wordlists/LiveJournal.txt
   :summary: Passwords from the LiveJournal.com data breach.
   :categories:
-    - Passwords
+    - passwords
 
 Top120Million-probable-WPA:
   :url: https://hashmob.net/api/v2/downloads/research/wordlists/Top120Million-probable-WPA.txt
   :summary: Old set of popular WPA passwords.
   :categories:
-    - Passwords
-    - Wifi
+    - passwords
+    - wifi
 
 zxcvbn:
   :url: https://hashmob.net/api/v2/downloads/research/wordlists/zxcvbn.txt
   :summary: Realistic weak passwords.
   :categories:
-    - Passwords
+    - passwords
 
 rockyou:
   :url: https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
   :summary: Common passwords list.
   :categories:
-    - Passwords
+    - passwords
 
 weakpass_3:
   :url: https://download.weakpass.com/wordlists/1947/weakpass_3.7z
   :summary: Updated Weakpass wordlist for general purpose.
   :categories:
-    - Passwords
+    - passwords
 
 weakpass_3w:
   :url: https://download.weakpass.com/wordlists/1950/weakpass_3w.7z
@@ -176,14 +176,14 @@ weakpass_3w:
     Same as weakpass_3p, but passwords length limited from 8 to 24 chars.
     Specially for fast WI-FI cracking.
   :categories:
-    - Passwords
-    - Wifi
+    - passwords
+    - wifi
 
 weakpass_3p:
   :url: https://download.weakpass.com/wordlists/1949/weakpass_3p.7z
   :summary: Same as weakpass_3, but passwords contains only printalbe charsets.
   :categories:
-    - Passwords
+    - passwords
 
 weakpass_3a:
   :url: https://download.weakpass.com/wordlists/1948/weakpass_3a.7z
@@ -191,66 +191,66 @@ weakpass_3a:
     The most complete compilation of wordlist's - more than 1500 in one.
     Contains near 8 billion of passwords with length from 4 to 25.	
   :categories:
-    - Passwords
+    - passwords
 
 directory-list-2-3-medium:
   :url: https://github.com/daviddias/node-dirbuster/raw/master/lists/directory-list-2.3-medium.txt
   :summary: Common directory name wordlist used for dirbusting.
   :categories:
-    - Directories
+    - dirs
 
 ws-dirs:
   :url: https://raw.githubusercontent.com/3ndG4me/KaliLists/master/wfuzz/webservices/ws-dirs.txt
   :summary: wfuzz webservices directories' wordlist.
   :categories:
-    - Directories
+    - dirs
 
 ws-files:
   :url: https://raw.githubusercontent.com/3ndG4me/KaliLists/master/wfuzz/webservices/ws-files.txt
   :summary: wfuzz webservices files' wordlist.
   :categories:
-    - Files
+    - files
 
 xajkep-wordlists:
   :url: https://github.com/xajkep/wordlists.git
   :summary: xajkep's wordlists.
   :categories:
-    - Collection
+    - collection
 
 SecLists:
   :url: https://github.com/danielmiessler/SecLists.git
   :summary: The SecLists repository of pentester wordlists.
   :categories:
-    - Collection
+    - collection
 
 pry0cc:
   :url: https://github.com/pry0cc/relevant-wordlist.git
   :summary: Dynamically generated wordlists based off of news headlines.
   :categories:
-    - Collection
+    - collection
 
 fuzzdb:
   :url: https://github.com/fuzzdb-project/fuzzdb.git
   :summary: FuzzDB repository of fuzzing wordlists.
   :categories:
-    - Collection
-    - Fuzzing
+    - collection
+    - fuzzing
 
 kkrypt0nn:
   :url: https://github.com/kkrypt0nn/wordlists.git
   :summary: kkrypt0nn's collection of wordlists.
   :categories:
-    - Collection
+    - collection
 
 trickest:
   :url: https://github.com/trickest/wordlists.git
   :summary: trickest's collection of wordlists.
   :categories:
-    - Collection
+    - collection
 
 graphql-wordlist:
   :url: https://github.com/Escape-Technologies/graphql-wordlist.git
   :summary: GraphQL wordlists for Operations, field names, type names, etc.
   :categories:
-    - Collection
-    - GraphQL
+    - collection
+    - graphql
