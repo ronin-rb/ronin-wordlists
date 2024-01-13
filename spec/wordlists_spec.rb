@@ -8,38 +8,12 @@ describe Ronin::Wordlists do
   let(:search_paths) { subject.instance_variable_get('@search_paths') }
 
   describe ".download" do
-    context "when given a URI::HTTP object" do
-      let(:uri) { URI.parse('http://example.com/path/to/wordlist.txt') }
+    let(:url) { 'http://example.com/path/to/wordlist.txt' }
 
-      it "must pass the URI::HTTP object to @cache_dir.download()" do
-        expect(cache_dir).to receive(:download).with(uri)
-
-        subject.download(uri)
-      end
-    end
-
-    context "when given a String object" do
-      context "and the String starts with http://" do
-        let(:string) { 'http://example.com/path/to/wordlist.txt' }
-        let(:uri)    { URI.parse(string) }
-
-        it "must parse the String as a URI" do
-          expect(cache_dir).to receive(:download).with(uri)
-
-          subject.download(string)
-        end
-      end
-
-      context "and the String starts with https://" do
-        let(:string) { 'https://example.com/path/to/wordlist.txt' }
-        let(:uri)    { URI.parse(string) }
-
-        it "must parse the String as a URI" do
-          expect(cache_dir).to receive(:download).with(uri)
-
-          subject.download(string)
-        end
-      end
+    it "must call @search_paths.download with the given URL" do
+      expect(cache_dir).to receive(:download).with(url)
+      
+      subject.download(url)
     end
   end
 
