@@ -23,6 +23,7 @@ require 'ronin/wordlists/cli/wordlist_dir_option'
 require 'ronin/wordlists/root'
 
 require 'ronin/core/cli/logging'
+require 'yaml'
 
 module Ronin
   module Wordlists
