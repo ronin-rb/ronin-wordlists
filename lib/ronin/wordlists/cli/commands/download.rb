@@ -49,8 +49,6 @@ module Ronin
           include WordlistDirOption
           include Core::CLI::Logging
 
-          WORDLISTS = YAML.load_file(File.join(ROOT,'data','wordlists.yml'))
-
           usage '[options] {NAME | URL}'
 
           argument :name_or_url, required: true,
@@ -73,9 +71,10 @@ module Ronin
 
               download(url)
             else
-              name = name_or_url
+              wordlists = YAML.load_file(File.join(ROOT,'data','wordlists.yml'))
+              name      = name_or_url
 
-              if (metadata = WORDLISTS[name])
+              if (metadata = wordlists[name])
                 download(metadata.fetch(:url))
               else
                 print_error "unknown wordlist: #{name}"
