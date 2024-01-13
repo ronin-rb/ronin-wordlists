@@ -12,7 +12,7 @@ describe Ronin::Wordlists do
 
     it "must call @search_paths.download with the given URL" do
       expect(cache_dir).to receive(:download).with(url)
-      
+
       subject.download(url)
     end
   end
@@ -23,7 +23,7 @@ describe Ronin::Wordlists do
 
     it "must call @search_paths.find with the given name" do
       expect(search_paths).to receive(:find).with(name).and_return(path)
-      
+
       expect(subject.find(name)).to eq(path)
     end
   end
@@ -62,7 +62,7 @@ describe Ronin::Wordlists do
 
     it "must call @search_paths.open with the given name" do
       expect(search_paths).to receive(:open).with(name).and_return(wordlist)
-      
+
       expect(subject.open(name)).to eq(wordlist)
     end
   end
