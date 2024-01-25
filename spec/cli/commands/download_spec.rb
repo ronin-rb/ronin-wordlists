@@ -7,7 +7,7 @@ describe Ronin::Wordlists::CLI::Commands::Download do
   include_examples "man_page"
 
   let(:url)         { 'http://example.com/wordlist.txt' }
-  let(:yaml_result) { { 'download_result' => { url: url } } }
+  let(:yaml_result) { { 'download_wordlist' => { url: url } } }
 
   describe '#run' do
     subject { Ronin::Wordlists::CLI::Commands::Download.new }
@@ -29,7 +29,7 @@ describe Ronin::Wordlists::CLI::Commands::Download do
         end
 
         it 'must look up the URL from the wordlists and calls download' do
-          expect(subject).to receive(:download).with(name)
+          expect(subject).to receive(:download).with(url)
 
           subject.run(name)
         end
@@ -48,20 +48,20 @@ describe Ronin::Wordlists::CLI::Commands::Download do
   describe '#download' do
     context 'when the download is successful' do
       it 'must log a success message' do
-        allow(subject.wordlist_dir).to receive(:download).with(test_url).and_return(double('DownloadedWordlist', name: 'test_wordlist'))
+        allow(subject.wordlist_dir).to receive(:download).with(url).and_return(double('DownloadedWordlist', name: 'test_wordlist'))
 
         expect {
-          command.download(test_url)
+          subject.download(url)
         }.to output(/Wordlist test_wordlist downloaded/).to_stdout
       end
     end
 
     context 'when the download fails' do
       it 'must log error massage and exit' do
-        allow(subject.wordlist_dir).to receive(:download).with(url).and_raise(DownloadFailed.new('Download failed'))
+        allow(subject.wordlist_dir).to receive(:download).with(url).and_raise(Ronin::Wordlists::DownloadFailed.new('Download failed'))
 
         expect {
-          command.download(test_url)
+          subject.download(url)
         }.to output(/Download failed/).to_stderr.and raise_error(SystemExit)
       end
     end
