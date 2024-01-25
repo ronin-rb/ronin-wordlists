@@ -10,8 +10,6 @@ describe Ronin::Wordlists::CLI::Commands::Download do
   let(:yaml_result) { { 'download_wordlist' => { url: url } } }
 
   describe '#run' do
-    subject { described_class.new }
-
     context 'when the url is provided' do
       it 'must call download with the URL' do
         expect(subject).to receive(:download).with(url)
