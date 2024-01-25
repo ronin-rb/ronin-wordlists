@@ -2,13 +2,13 @@ require 'spec_helper'
 require 'ronin/wordlists/cli/wordlist_dir_option'
 require 'ronin/wordlists/cli/command'
 
-class MockCommand < Ronin::Wordlists::CLI::Command
-  include Ronin::Wordlists::CLI::WordlistDirOption
-end
-
 RSpec.describe Ronin::Wordlists::CLI::WordlistDirOption do
+  class WordlistDirOptionCommandMock < Ronin::Wordlists::CLI::Command
+    include Ronin::Wordlists::CLI::WordlistDirOption
+  end
+
   describe '.included' do
-    subject { MockCommand }
+    subject { WordlistDirOptionCommandMock }
 
     it 'adds the --wordlist-dir option to the command' do
       expect(subject.options).to include(:wordlist_dir)
@@ -16,7 +16,7 @@ RSpec.describe Ronin::Wordlists::CLI::WordlistDirOption do
   end
 
   describe '#wordlist_dir' do
-    subject { MockCommand.new }
+    subject { WordlistDirOptionCommandMock.new }
 
     context 'when --wordlist-dir is specified' do
       it 'returns a WordlistDir with the specified directory' do
