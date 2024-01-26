@@ -6,8 +6,10 @@ require_relative 'man_page_example'
 describe Ronin::Wordlists::CLI::Commands::Download do
   include_examples "man_page"
 
-  let(:url)         { 'http://example.com/wordlist.txt' }
-  let(:yaml_result) { { 'download_wordlist' => { url: url } } }
+  let(:url) { 'http://example.com/wordlist.txt' }
+  let(:yaml_result) do
+    { 'download_wordlist' => { url: url } }
+  end
 
   describe '#run' do
     context 'when the url is provided' do
