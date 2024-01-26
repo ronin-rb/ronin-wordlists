@@ -14,7 +14,13 @@ describe Ronin::Wordlists::CLI::Commands::List do
         expect(subject.wordlist_dir).to receive(:list).with(name).and_return(wordlists)
         expect {
           subject.run(name)
-        }.to output("  list1\n  list2\n").to_stdout
+        }.to output(
+          [
+            "  list1",
+            "  list2",
+            ""
+          ].join($/)
+        ).to_stdout
       end
     end
 
@@ -25,7 +31,14 @@ describe Ronin::Wordlists::CLI::Commands::List do
         expect(subject.wordlist_dir).to receive(:list).with(no_args).and_return(wordlists)
         expect {
           subject.run
-        }.to output("  wordlist1\n  wordlist2\n  wordlist3\n").to_stdout
+        }.to output(
+          [
+            "  wordlist1",
+            "  wordlist2",
+            "  wordlist3",
+            ""
+          ].join($/)
+        ).to_stdout
       end
     end
   end
