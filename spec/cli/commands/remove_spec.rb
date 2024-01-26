@@ -22,12 +22,12 @@ describe Ronin::Wordlists::CLI::Commands::Remove do
     end
 
     context 'when the wordlist does not exist' do
-      let(:wordlist_name) { 'not_existing_wordlist'}
+      let(:wordlist_name) { 'not_existing_wordlist' }
 
       it 'must print an error message and exit' do
         expect {
           subject.run(wordlist_name)
-        }.to output("no such wordlist #{wordlist_name}").to_stderr
+        }.to output(/no such wordlist: #{wordlist_name}/).to_stderr.and raise_error(SystemExit)
       end
     end
   end
