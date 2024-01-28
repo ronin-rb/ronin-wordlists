@@ -66,6 +66,7 @@ module Ronin
         @manifest = load_manifest
       end
 
+      # Mapping of wordlist `type:` values and their classes.
       WORDLIST_TYPES = {
         git:  WordlistRepo,
         file: WordlistFile
