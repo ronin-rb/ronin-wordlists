@@ -21,7 +21,7 @@ metadata:
 generated_files:
  - data/completions/ronin-wordlists
  - man/ronin-wordlists.1
- - man/ronin-wordlists-available.1
+ - man/ronin-wordlists-search.1
  - man/ronin-wordlists-completion.1
  - man/ronin-wordlists-download.1
  - man/ronin-wordlists-list.1
