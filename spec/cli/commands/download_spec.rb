@@ -1,15 +1,11 @@
 require 'spec_helper'
 require 'ronin/wordlists/cli/commands/download'
-require 'ronin/wordlists/root'
 require_relative 'man_page_example'
 
 describe Ronin::Wordlists::CLI::Commands::Download do
   include_examples "man_page"
 
   let(:url) { 'http://example.com/wordlist.txt' }
-  let(:yaml_result) do
-    { 'download_wordlist' => { url: url } }
-  end
 
   describe '#run' do
     context 'when the url is provided' do
@@ -23,12 +19,22 @@ describe Ronin::Wordlists::CLI::Commands::Download do
     context 'when the name is provided' do
       let(:name) { 'download_wordlist' }
 
-      context "and exist in wordlist" do
+      context "and it exists in the data/wordlists.yml file" do
         before do
-          allow(YAML).to receive(:load_file).and_return(yaml_result)
+          allow(Ronin::Wordlists::CLI::WordlistIndex).to receive(:load).and_return(
+            Ronin::Wordlists::CLI::WordlistIndex.new(
+              {
+                name => Ronin::Wordlists::CLI::WordlistIndex::Entry.new(
+                          name, url:        url,
+                                summary:    'A test wordlist',
+                                categories: %w[test]
+                        )
+              }
+            )
+          )
         end
 
-        it 'must look up the URL from the wordlists and calls download' do
+        it 'must look up the URL from the data/wordlists.yml and calls download' do
           expect(subject).to receive(:download).with(url)
 
           subject.run(name)
