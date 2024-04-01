@@ -20,10 +20,9 @@
 
 require 'ronin/wordlists/cli/command'
 require 'ronin/wordlists/cli/wordlist_dir_option'
-require 'ronin/wordlists/root'
+require 'ronin/wordlists/cli/wordlist_index'
 
 require 'ronin/core/cli/logging'
-require 'yaml'
 
 module Ronin
   module Wordlists
@@ -72,11 +71,11 @@ module Ronin
 
               download(url)
             else
-              wordlists = YAML.load_file(File.join(ROOT,'data','wordlists.yml'))
-              name      = name_or_url
+              index = WordlistIndex.load
+              name  = name_or_url
 
-              if (metadata = wordlists[name])
-                download(metadata.fetch(:url))
+              if (entry = index[name])
+                download(entry.url)
               else
                 print_error "unknown wordlist: #{name}"
                 exit(1)

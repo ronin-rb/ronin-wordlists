@@ -19,8 +19,7 @@
 #
 
 require 'ronin/wordlists/cli/command'
-
-require 'yaml'
+require 'ronin/wordlists/cli/wordlist_index'
 
 module Ronin
   module Wordlists
@@ -49,14 +48,14 @@ module Ronin
           # Runs the `ronin-wordlists available` command.
           #
           def run
-            wordlists = YAML.load_file(File.join(ROOT,'data','wordlists.yml'))
+            index = WordlistIndex.load
 
-            wordlists.each do |name,attributes|
-              puts "[ #{name} ]"
+            index.each do |entry|
+              puts "[ #{entry.name} ]"
               puts
-              puts "  * URL: #{attributes[:url]}"
-              puts "  * Categories: #{attributes[:categories].join(', ')}"
-              puts "  * Summary: #{attributes[:summary]}"
+              puts "  * URL: #{entry.url}"
+              puts "  * Categories: #{entry.categories.join(', ')}"
+              puts "  * Summary: #{entry.summary}"
               puts
             end
           end

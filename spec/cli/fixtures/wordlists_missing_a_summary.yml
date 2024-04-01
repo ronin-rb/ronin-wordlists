@@ -1,0 +1,6 @@
+---
+bad:
+  :url: https://example.com/wordlist.txt
+  :categories:
+    - foo
+    - bar

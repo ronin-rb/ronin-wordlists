@@ -1,0 +1,6 @@
+---
+bad:
+  :summary: Foo bar
+  :categories:
+    - foo
+    - bar
