@@ -29,8 +29,8 @@ describe Ronin::Wordlists::CLI::WordlistIndex do
       end
 
       context "when the categories: keyword argument is given" do
-        it "must set #categories" do
-          expect(subject.categories).to eq(categories)
+        it "must set #categories as the Set of the given categories:" do
+          expect(subject.categories).to eq(Set.new(categories))
         end
       end
 
@@ -40,8 +40,8 @@ describe Ronin::Wordlists::CLI::WordlistIndex do
                                     summary: summary)
         end
 
-        it "must default #categories to an empty Array" do
-          expect(subject.categories).to eq([])
+        it "must default #categories to an empty Set" do
+          expect(subject.categories).to eq(Set.new)
         end
       end
     end
@@ -76,13 +76,13 @@ describe Ronin::Wordlists::CLI::WordlistIndex do
       expect(index.entries['rockyou'].name).to eq('rockyou')
       expect(index.entries['rockyou'].url).to eq('https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt')
       expect(index.entries['rockyou'].summary).to eq('Common passwords list.')
-      expect(index.entries['rockyou'].categories).to eq(%w[passwords])
+      expect(index.entries['rockyou'].categories).to eq(Set['passwords'])
 
       expect(index.entries['subdomains-1000']).to be_kind_of(described_class::Entry)
       expect(index.entries['subdomains-1000'].name).to eq('subdomains-1000')
       expect(index.entries['subdomains-1000'].url).to eq('https:/raw.githubusercontent./com/rbsec/dnscan/master/subdomains-1000.txt')
       expect(index.entries['subdomains-1000'].summary).to eq('Top 1000 most common subdomain names used by the dnscan util.')
-      expect(index.entries['subdomains-1000'].categories).to eq(%w[dns subdomains])
+      expect(index.entries['subdomains-1000'].categories).to eq(Set['dns', 'subdomains'])
     end
 
     context "when the wordlist index file does not contain a Hash" do

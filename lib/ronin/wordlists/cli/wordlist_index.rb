@@ -22,6 +22,7 @@ require 'ronin/wordlists/root'
 require 'ronin/wordlists/exceptions'
 
 require 'yaml'
+require 'set'
 
 module Ronin
   module Wordlists
@@ -55,7 +56,7 @@ module Ronin
 
           # The categories the wordlist belongs to.
           #
-          # @return [Array<String>]
+          # @return [Set<String>]
           attr_reader :categories
 
           #
@@ -78,7 +79,7 @@ module Ronin
             @url  = url
 
             @summary    = summary
-            @categories = categories
+            @categories = categories.to_set
           end
 
         end
