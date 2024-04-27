@@ -9,3 +9,10 @@ inherit_gem:
 #
 # ronin-wordlists specific exceptions
 #
+
+# make an exception for when we need to test the #each method directly
+Style/MapIntoArray:
+  Exclude:
+    - 'spec/cache_dir_spec.rb'
+    - 'spec/search_paths_spec.rb'
+    - 'spec/wordlist_dir_spec.rb'
