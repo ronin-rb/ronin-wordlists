@@ -1,0 +1,9 @@
+---
+ronin-wordlists remove:
+  - $(ronin-wordlists list)
+ronin-wordlists rm:
+  - $(ronin-wordlists list)
+ronin-wordlists update:
+  - $(ronin-wordlists list)
+ronin-wordlists up:
+  - $(ronin-wordlists list)

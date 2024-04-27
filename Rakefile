@@ -38,5 +38,6 @@ require 'command_kit/completion/task'
 CommandKit::Completion::Task.new(
   class_file:  'ronin/wordlists/cli',
   class_name:  'Ronin::Wordlists::CLI',
+  input_file:  'data/completions/ronin-wordlists.yml',
   output_file: 'data/completions/ronin-wordlists'
 )
