@@ -41,3 +41,5 @@ CommandKit::Completion::Task.new(
   input_file:  'data/completions/ronin-wordlists.yml',
   output_file: 'data/completions/ronin-wordlists'
 )
+
+task :setup => %w[man command_kit:completion]
