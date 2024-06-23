@@ -10,8 +10,8 @@ end
 # gem 'wordlist', '~> 1.1', github: 'postmodern/wordlist.rb'
 
 # Ronin dependencies
-gem 'ronin-core', '~> 0.2', github: "ronin-rb/ronin-core",
-                            branch: '0.2.0'
+# gem 'ronin-core', '~> 0.2', github: "ronin-rb/ronin-core",
+#                             branch: 'main'
 
 group :development do
   gem 'rake'
