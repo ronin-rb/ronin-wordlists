@@ -30614,7 +30614,7 @@ one-xl:
   categories:
   - fuzzing
 
-one:
+one01:
   url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/User-Agents/operating-platform/one.txt
   summary: Fuzzing wordlist
   categories:
