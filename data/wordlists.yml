@@ -14,243 +14,239 @@
 #
 ---
 alexa-top-1000:
-  :url: https://github.com/urbanadventurer/WhatWeb/blob/master/plugin-development/alexa-top-1000.txt
-  :summary: The Alexa Top 1000 domain names.
-  :categories:
-    - dns
-    - domains
+  url: https://github.com/urbanadventurer/WhatWeb/blob/master/plugin-development/alexa-top-1000.txt
+  summary: The Alexa Top 1000 domain names.
+  categories:
+  - dns
+  - domains
 
 subdomains:
-  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains.txt
-  :summary: List of common subdomain names used by the dnscan util.
-  :categories:
-    - dns
-    - subdomains
+  url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains.txt
+  summary: List of common subdomain names used by the dnscan util.
+  categories:
+  - dns
+  - subdomains
 
 subdomains-100:
-  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-100.txt
-  :summary: Top 100 most common subdomain names used by the dnscan util.
-  :categories:
-    - dns
-    - subdomains
+  url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-100.txt
+  summary: Top 100 most common subdomain names used by the dnscan util.
+  categories:
+  - dns
+  - subdomains
 
 subdomains-500:
-  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-500.txt
-  :summary: Top 500 most common subdomain names used by the dnscan util.
-  :categories:
-    - dns
-    - subdomains
+  url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-500.txt
+  summary: Top 500 most common subdomain names used by the dnscan util.
+  categories:
+  - dns
+  - subdomains
 
 subdomains-1000:
-  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-1000.txt
-  :summary: Top 1000 most common subdomain names used by the dnscan util.
-  :categories:
-    - dns
-    - subdomains
+  url: https:/raw.githubusercontent./com/rbsec/dnscan/master/subdomains-1000.txt
+  summary: Top 1000 most common subdomain names used by the dnscan util.
+  categories:
+  - dns
+  - subdomains
 
 subdomains-10000:
-  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-10000.txt
-  :summary: Top 10000 most common subdomain names used by the dnscan util.
-  :categories:
-    - dns
-    - subdomains
+  url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-10000.txt
+  summary: Top 10000 most common subdomain names used by the dnscan util.
+  categories:
+  - dns
+  - subdomains
 
 subdomains-uk-500:
-  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-uk-500.txt
-  :summary: Top 500 most common UK subdomain names used by the dnscan util.
-  :categories:
-    - dns
-    - subdomains
+  url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-uk-500.txt
+  summary: Top 500 most common UK subdomain names used by the dnscan util.
+  categories:
+  - dns
+  - subdomains
 
 subdomains-uk-1000:
-  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-uk-1000.txt
-  :summary: Top 1000 most common UK subdomain names used by the dnscan util.
-  :categories:
-    - dns
-    - subdomains
+  url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-uk-1000.txt
+  summary: Top 1000 most common UK subdomain names used by the dnscan util.
+  categories:
+  - dns
+  - subdomains
 
 suffixes:
-  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/suffixes.txt
-  :summary: List of common domain suffixes used by the dnscan util.
-  :categories:
-    - dns
-    - public-suffixes
+  url: https://raw.githubusercontent.com/rbsec/dnscan/master/suffixes.txt
+  summary: List of common domain suffixes used by the dnscan util.
+  categories:
+  - dns
+  - public-suffixes
 
 tlds:
-  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/tlds.txt
-  :summary: List of common TLDs used by the dnscan util.
-  :categories:
-    - dns
-    - tlds
+  url: https://raw.githubusercontent.com/rbsec/dnscan/master/tlds.txt
+  summary: List of common TLDs used by the dnscan util.
+  categories:
+  - dns
+  - tlds
 
 argon:
-  :url: http://www.mediafire.com/file/zd3zhzfezl9wd96/Argon_Wordlist_v2.gz
-  :summary: Really big password list.
-  :categories:
-    - passwords
+  url: http://www.mediafire.com/file/zd3zhzfezl9wd96/Argon_Wordlist_v2.gz
+  summary: Really big password list.
+  categories:
+  - passwords
 
 hashes.org-2012-2015:
-  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2012-2015.7z
-  :summary: Hashes.org archive of passwords found in 2012 - 2015.
-  :categories:
-    - passwords
+  url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2012-2015.7z
+  summary: Hashes.org archive of passwords found in 2012 - 2015.
+  categories:
+  - passwords
 
 hashes.org-2016:
-  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2016.7z
-  :summary: Hashes.org archive of passwords found in 2016.
-  :categories:
-    - passwords
+  url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2016.7z
+  summary: Hashes.org archive of passwords found in 2016.
+  categories:
+  - passwords
 
 hashes.org-2017:
-  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2017.7z
-  :summary: Hashes.org archive of passwords found in 2017.
-  :categories:
-    - passwords
+  url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2017.7z
+  summary: Hashes.org archive of passwords found in 2017.
+  categories:
+  - passwords
 
 hashes.org-2018:
-  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2018.7z
-  :summary: Hashes.org archive of passwords found in 2018.
-  :categories:
-    - passwords
+  url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2018.7z
+  summary: Hashes.org archive of passwords found in 2018.
+  categories:
+  - passwords
 
 hashes.org-2019:
-  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2019.7z
-  :summary: Hashes.org archive of passwords found in 2019.
-  :categories:
-    - passwords
+  url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2019.7z
+  summary: Hashes.org archive of passwords found in 2019.
+  categories:
+  - passwords
 
 hashes.org-2020:
-  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2020.7z
-  :summary: Hashes.org archive of passwords found in 2020.
-  :categories:
-    - passwords
+  url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2020.7z
+  summary: Hashes.org archive of passwords found in 2020.
+  categories:
+  - passwords
 
 hashes.org-2021:
-  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2021.txt
-  :summary: Hashes.org archive of passwords found in 2021.
-  :categories:
-    - passwords
+  url: https://hashmob.net/api/v2/downloads/research/wordlists/hashes.org-2021.txt
+  summary: Hashes.org archive of passwords found in 2021.
+  categories:
+  - passwords
 
 hashkiller-dict:
-  :url: https://hashmob.net/api/v2/downloads/research/wordlists/hashkiller-dict.txt
-  :summary: Hashkiller dictionary from hashkiller.io.
-  :categories:
-    - passwords
+  url: https://hashmob.net/api/v2/downloads/research/wordlists/hashkiller-dict.txt
+  summary: Hashkiller dictionary from hashkiller.io.
+  categories:
+  - passwords
 
 DailyQuiz:
-  :url: https://hashmob.net/api/v2/downloads/research/wordlists/DailyQuiz.txt
-  :summary: Passwords from the DailyQuiz.me data breach.
-  :categories:
-    - passwords
+  url: https://hashmob.net/api/v2/downloads/research/wordlists/DailyQuiz.txt
+  summary: Passwords from the DailyQuiz.me data breach.
+  categories:
+  - passwords
 
 LiveJournal:
-  :url: https://hashmob.net/api/v2/downloads/research/wordlists/LiveJournal.txt
-  :summary: Passwords from the LiveJournal.com data breach.
-  :categories:
-    - passwords
+  url: https://hashmob.net/api/v2/downloads/research/wordlists/LiveJournal.txt
+  summary: Passwords from the LiveJournal.com data breach.
+  categories:
+  - passwords
 
 Top120Million-probable-WPA:
-  :url: https://hashmob.net/api/v2/downloads/research/wordlists/Top120Million-probable-WPA.txt
-  :summary: Old set of popular WPA passwords.
-  :categories:
-    - passwords
-    - wifi
+  url: https://hashmob.net/api/v2/downloads/research/wordlists/Top120Million-probable-WPA.txt
+  summary: Old set of popular WPA passwords.
+  categories:
+  - passwords
+  - wifi
 
 zxcvbn:
-  :url: https://hashmob.net/api/v2/downloads/research/wordlists/zxcvbn.txt
-  :summary: Realistic weak passwords.
-  :categories:
-    - passwords
+  url: https://hashmob.net/api/v2/downloads/research/wordlists/zxcvbn.txt
+  summary: Realistic weak passwords.
+  categories:
+  - passwords
 
 rockyou:
-  :url: https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
-  :summary: Common passwords list.
-  :categories:
-    - passwords
+  url: https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
+  summary: Common passwords list.
+  categories:
+  - passwords
 
 weakpass_3:
-  :url: https://download.weakpass.com/wordlists/1947/weakpass_3.7z
-  :summary: Updated Weakpass wordlist for general purpose.
-  :categories:
-    - passwords
+  url: https://download.weakpass.com/wordlists/1947/weakpass_3.7z
+  summary: Updated Weakpass wordlist for general purpose.
+  categories:
+  - passwords
 
 weakpass_3w:
-  :url: https://download.weakpass.com/wordlists/1950/weakpass_3w.7z
-  :summary:
-    Same as weakpass_3p, but passwords length limited from 8 to 24 chars.
-    Specially for fast WI-FI cracking.
-  :categories:
-    - passwords
-    - wifi
+  url: https://download.weakpass.com/wordlists/1950/weakpass_3w.7z
+  summary: Same as weakpass_3p, but passwords length limited from 8 to 24 chars. Specially for fast WI-FI cracking.
+  categories:
+  - passwords
+  - wifi
 
 weakpass_3p:
-  :url: https://download.weakpass.com/wordlists/1949/weakpass_3p.7z
-  :summary: Same as weakpass_3, but passwords contains only printalbe charsets.
-  :categories:
-    - passwords
+  url: https://download.weakpass.com/wordlists/1949/weakpass_3p.7z
+  summary: Same as weakpass_3, but passwords contains only printalbe charsets.
+  categories:
+  - passwords
 
 weakpass_3a:
-  :url: https://download.weakpass.com/wordlists/1948/weakpass_3a.7z
-  :summary:
-    The most complete compilation of wordlist's - more than 1500 in one.
-    Contains near 8 billion of passwords with length from 4 to 25.	
-  :categories:
-    - passwords
+  url: https://download.weakpass.com/wordlists/1948/weakpass_3a.7z
+  summary: The most complete compilation of wordlist's - more than 1500 in one. Contains near 8 billion of passwords with length from 4 to 25.
+  categories:
+  - passwords
 
 directory-list-2-3-medium:
-  :url: https://github.com/daviddias/node-dirbuster/raw/master/lists/directory-list-2.3-medium.txt
-  :summary: Common directory name wordlist used for dirbusting.
-  :categories:
-    - dirs
+  url: https://github.com/daviddias/node-dirbuster/raw/master/lists/directory-list-2.3-medium.txt
+  summary: Common directory name wordlist used for dirbusting.
+  categories:
+  - dirs
 
 ws-dirs:
-  :url: https://raw.githubusercontent.com/3ndG4me/KaliLists/master/wfuzz/webservices/ws-dirs.txt
-  :summary: wfuzz webservices directories' wordlist.
-  :categories:
-    - dirs
+  url: https://raw.githubusercontent.com/3ndG4me/KaliLists/master/wfuzz/webservices/ws-dirs.txt
+  summary: wfuzz webservices directories' wordlist.
+  categories:
+  - dirs
 
 ws-files:
-  :url: https://raw.githubusercontent.com/3ndG4me/KaliLists/master/wfuzz/webservices/ws-files.txt
-  :summary: wfuzz webservices files' wordlist.
-  :categories:
-    - files
+  url: https://raw.githubusercontent.com/3ndG4me/KaliLists/master/wfuzz/webservices/ws-files.txt
+  summary: wfuzz webservices files' wordlist.
+  categories:
+  - files
 
 xajkep-wordlists:
-  :url: https://github.com/xajkep/wordlists.git
-  :summary: xajkep's wordlists.
-  :categories:
-    - collection
+  url: https://github.com/xajkep/wordlists.git
+  summary: xajkep's wordlists.
+  categories:
+  - collection
 
 SecLists:
-  :url: https://github.com/danielmiessler/SecLists.git
-  :summary: The SecLists repository of pentester wordlists.
-  :categories:
-    - collection
+  url: https://github.com/danielmiessler/SecLists.git
+  summary: The SecLists repository of pentester wordlists.
+  categories:
+  - collection
 
 pry0cc:
-  :url: https://github.com/pry0cc/relevant-wordlist.git
-  :summary: Dynamically generated wordlists based off of news headlines.
-  :categories:
-    - collection
+  url: https://github.com/pry0cc/relevant-wordlist.git
+  summary: Dynamically generated wordlists based off of news headlines.
+  categories:
+  - collection
 
 fuzzdb:
-  :url: https://github.com/fuzzdb-project/fuzzdb.git
-  :summary: FuzzDB repository of fuzzing wordlists.
-  :categories:
-    - collection
-    - fuzzing
+  url: https://github.com/fuzzdb-project/fuzzdb.git
+  summary: FuzzDB repository of fuzzing wordlists.
+  categories:
+  - collection
+  - fuzzing
 
 kkrypt0nn:
-  :url: https://github.com/kkrypt0nn/wordlists.git
-  :summary: kkrypt0nn's collection of wordlists.
-  :categories:
-    - collection
+  url: https://github.com/kkrypt0nn/wordlists.git
+  summary: kkrypt0nn's collection of wordlists.
+  categories:
+  - collection
 
 trickest:
-  :url: https://github.com/trickest/wordlists.git
-  :summary: trickest's collection of wordlists.
-  :categories:
-    - collection
+  url: https://github.com/trickest/wordlists.git
+  summary: trickest's collection of wordlists.
+  categories:
+  - collection
 
 graphql-wordlist:
   :url: https://github.com/Escape-Technologies/graphql-wordlist.git
