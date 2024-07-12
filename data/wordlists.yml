@@ -13906,10 +13906,6 @@ webkit:
   :categories:
   - fuzzing
 
-admire:
-
-  - fuzzing
-
 android:
   :url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/User-Agents/operating-system-name/android.txt
   :summary: Fuzzing wordlist.
