@@ -1,4 +1,4 @@
-### 0.1.0 / 2024-XX-XX
+### 0.1.0 / 2024-07-22
 
 * Initial release:
   * Installs, updates, and manages wordlist files and Git repositories.
