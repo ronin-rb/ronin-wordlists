@@ -10,6 +10,10 @@ inherit_gem:
 # ronin-wordlists specific exceptions
 #
 
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'lint/{**/}*.rb'
+
 # make an exception for when we need to test the #each method directly
 Style/MapIntoArray:
   Exclude:

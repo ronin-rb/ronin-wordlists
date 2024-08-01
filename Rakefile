@@ -25,7 +25,16 @@ Gem::Tasks.new(sign: {checksum: true, pgp: true})
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new
 task :test    => :spec
-task :default => :spec
+task :default => :test
+
+namespace :lint do
+  desc "Lint data/wordlists.yml"
+  RSpec::Core::RakeTask.new(:wordlists) do |t|
+    t.pattern    = 'lint/wordlists_yml_spec.rb'
+    t.rspec_opts = ['--format', 'progress']
+  end
+end
+task :lint => 'lint:wordlists'
 
 require 'yard'
 YARD::Rake::YardocTask.new

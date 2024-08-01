@@ -1,5 +1,6 @@
-require 'spec_helper'
+require 'rspec'
 require 'yaml'
+require 'uri'
 
 describe "data/wordlists.yml" do
   wordlists = YAML.load_file(File.join(__dir__,'..','data','wordlists.yml'))
