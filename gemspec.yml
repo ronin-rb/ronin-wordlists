@@ -29,6 +29,10 @@ generated_files:
  - man/ronin-wordlists-remove.1
  - man/ronin-wordlists-update.1
 
+test_files:
+  - spec/{**/}*
+  - lint/{**/}*
+
 required_ruby_version: ">= 3.0.0"
 
 dependencies:

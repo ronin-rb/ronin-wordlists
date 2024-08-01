@@ -1,0 +1,25 @@
+name: Lint Wordlists 
+
+on:
+  push:
+    paths:
+      - data/wordlists.yml
+      - lint/wordlists_yml_spec.rb
+  pull_request:
+    paths:
+      - data/wordlists.yml
+      - lint/wordlists_yml_spec.rb
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+      - name: Install dependencies
+        run: bundle install --jobs 4 --retry 3
+      - name: Run linting
+        run: 'bundle exec rake lint:wordlists'
