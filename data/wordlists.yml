@@ -42,7 +42,7 @@ subdomains-500:
     - subdomains
 
 subdomains-1000:
-  :url: https:/raw.githubusercontent./com/rbsec/dnscan/master/subdomains-1000.txt
+  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-1000.txt
   :summary: Top 1000 most common subdomain names used by the dnscan util.
   :categories:
     - dns
