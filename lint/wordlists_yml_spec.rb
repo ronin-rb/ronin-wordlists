@@ -30,8 +30,15 @@ describe "data/wordlists.yml" do
       end
 
       describe ":url" do
-        it "must be a http:// or https:// URL" do
-          expect(attributes[:url]).to match(/\A#{URI::DEFAULT_PARSER.make_regexp(%w[http https])}\z/)
+        it "must be a valid http:// or https:// URL" do
+          uri = URI(attributes[:url])
+
+          expect(uri).to be_kind_of(URI::HTTP).or(be_kind_of(URI::HTTPS))
+          expect(uri.host).to_not be(nil), "URI does not have a host name"
+          expect(uri.host).to_not be_empty, "URI does not have a host name"
+          expect(uri.port).to_not be(nil), "URI does not have a port number"
+          expect(uri.path).to_not be(nil), "URI does not have a path"
+          expect(uri.path).to_not be_empty, "URI does not have a path"
         end
       end
 
