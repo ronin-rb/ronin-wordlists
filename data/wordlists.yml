@@ -12,6 +12,7 @@
 # Note: the wordlist's URL may be a regular `http://` or `https://` URL to a
 # file, or a `https://` Git URL (ex: `https://github.com/foo/bar.git`).
 #
+# Forcing a change
 ---
 alexa-top-1000:
   url: https://github.com/urbanadventurer/WhatWeb/blob/master/plugin-development/alexa-top-1000.txt
