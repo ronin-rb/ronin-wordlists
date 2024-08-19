@@ -3,10 +3,12 @@ name: Lint Wordlists
 on:
   push:
     paths:
+      - .yamllint.yml
       - data/wordlists.yml
       - lint/wordlists_yml_spec.rb
   pull_request:
     paths:
+      - .yamllint.yml
       - data/wordlists.yml
       - lint/wordlists_yml_spec.rb
 
