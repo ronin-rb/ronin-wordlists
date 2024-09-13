@@ -178,8 +178,7 @@ weakpass_3:
 weakpass_3w:
   :url: https://download.weakpass.com/wordlists/1950/weakpass_3w.7z
   :summary:
-    Same as weakpass_3p, but passwords length limited from 8 to 24 chars.
-    Specially for fast WI-FI cracking.
+    Same as weakpass_3p, but passwords length limited from 8 to 24 chars. Specially for fast WI-FI cracking.
   :categories:
     - passwords
     - wifi
