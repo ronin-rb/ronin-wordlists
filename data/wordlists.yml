@@ -6601,12 +6601,6 @@ Congress:
   :categories:
   - misc
 
-ONEUPER:
-  :url: https://download.weakpass.com/wordlists/331/ONEUP&R.DIC.gz
-  :summary: Misc wordlist.
-  :categories:
-  - misc
-
 music-co:
   :url: https://download.weakpass.com/wordlists/396/music-co.txt.gz
   :summary: Misc wordlist.
