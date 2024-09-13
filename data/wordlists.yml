@@ -194,7 +194,7 @@ weakpass_3a:
     The most complete compilation of wordlist's - more than 1500 in one.
     Contains near 8 billion of passwords with length from 4 to 25.
   :categories:
-    - passwords
+  - passwords
 
 directory-list-2-3-medium:
   :url: https://github.com/daviddias/node-dirbuster/raw/master/lists/directory-list-2.3-medium.txt
@@ -255,8 +255,8 @@ graphql-wordlist:
   :url: https://github.com/Escape-Technologies/graphql-wordlist.git
   :summary: GraphQL wordlists for Operations, field names, type names, etc.
   :categories:
-    - collection
-    - graphql
+  - collection
+  - graphql
 
 telnet-betterdefaultpasslist:
   :url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Default-Credentials/telnet-betterdefaultpasslist.txt
@@ -13853,3 +13853,4 @@ android:
   :summary: Fuzzing wordlist.
   :categories:
   - fuzzing
+  
