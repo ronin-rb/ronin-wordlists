@@ -1326,7 +1326,7 @@ Top1pt6Million-probable-v2:
   :categories:
   - misc
 
-BestByChesteRock#1:
+BestByChesteRock-1:
   :url: https://download.weakpass.com/wordlists/1696/BestByChesteRock#1.txt.gz
   :summary: Misc wordlist.
   :categories:
@@ -1752,7 +1752,7 @@ instagram_hashtags:
   :categories:
   - passwords
 
-webhost000(thechief):
+webhost000-thechief:
   :url: https://download.weakpass.com/wordlists/1095/webhost000(thechief).txt.gz
   :summary: Discovery wordlist.
   :categories:
@@ -1812,7 +1812,7 @@ GDict:
   :categories:
   - misc
 
-thedefinitvepasswordlist(complete):
+thedefinitvepasswordlist-complete:
   :url: https://download.weakpass.com/wordlists/1093/thedefinitvepasswordlist(complete).txt.gz
   :summary: Passwords wordlist.
   :categories:
@@ -2027,12 +2027,6 @@ Russian_domains:
   :summary: Discovery wordlist.
   :categories:
   - discovery
-
-_hugedb:
-  :url: https://download.weakpass.com/wordlists/628/_hugedb.txt.gz
-  :summary: Misc wordlist.
-  :categories:
-  - misc
 
 enwiktionary-20140522-all-titles_wordlists:
   :url: https://download.weakpass.com/wordlists/677/enwiktionary-20140522-all-titles_wordlists.gz
@@ -2252,12 +2246,6 @@ f04d073b:
 
 argon-outher:
   :url: https://download.weakpass.com/wordlists/504/argon-outher.txt.gz
-  :summary: Misc wordlist.
-  :categories:
-  - misc
-
-83124311:
-  :url: https://download.weakpass.com/wordlists/1234/83124311.txt.gz
   :summary: Misc wordlist.
   :categories:
   - misc
@@ -2636,12 +2624,6 @@ BIG-WPA-LIST-2:
 
 CainandAbel:
   :url: https://download.weakpass.com/wordlists/495/CainandAbel.dic.gz
-  :summary: Misc wordlist.
-  :categories:
-  - misc
-
-_Words:
-  :url: https://download.weakpass.com/wordlists/611/_Words.txt.gz
   :summary: Misc wordlist.
   :categories:
   - misc
@@ -3030,12 +3012,6 @@ finnish-www:
   :categories:
   - misc
 
-06:
-  :url: https://download.weakpass.com/wordlists/752/06.dic.gz
-  :summary: Misc wordlist.
-  :categories:
-  - misc
-
 mini-qwerty:
   :url: https://download.weakpass.com/wordlists/1728/mini-qwerty.txt.gz
   :summary: Misc wordlist.
@@ -3096,7 +3072,7 @@ weakpass-wordlist-02bc69bc:
   :categories:
   - misc
 
-weakpass-wordlist-tyte-pwl(8500):
+weakpass-wordlist-tyte-pwl-8500:
   :url: https://download.weakpass.com/wordlists/448/tytepwl(8500).txt.gz
   :summary: Misc wordlist.
   :categories:
@@ -3104,12 +3080,6 @@ weakpass-wordlist-tyte-pwl(8500):
 
 titles:
   :url: https://download.weakpass.com/wordlists/963/titles.dic.gz
-  :summary: Misc wordlist.
-  :categories:
-  - misc
-
-acdc%27s_dictionary:
-  :url: https://download.weakpass.com/wordlists/1325/http://www.mediafire.com/file/i70y9kgc1y2vynn/acdc%27s_dictionary.txt.gz
   :summary: Misc wordlist.
   :categories:
   - misc
@@ -3163,7 +3133,7 @@ weakpass-wordlist-23000:
   - misc
 
 Knuth_big:
-  :url: " https://download.weakpass.com/wordlists/733/Knuth_big.dic.gz"
+  :url: https://download.weakpass.com/wordlists/733/Knuth_big.dic.gz
   :summary: Misc wordlist.
   :categories:
   - misc
@@ -3283,7 +3253,7 @@ starin:
   - misc
 
 50k_names:
-  :url: " https://download.weakpass.com/wordlists/682/50k_names.txt.gz"
+  :url: https://download.weakpass.com/wordlists/682/50k_names.txt.gz
   :summary: Misc wordlist.
   :categories:
   - misc
@@ -4753,7 +4723,7 @@ Hungarian:
   - misc
 
 Interlingue:
-  :url: " https://download.weakpass.com/wordlists/933/Interlingue.udic.gz"
+  :url: https://download.weakpass.com/wordlists/933/Interlingue.udic.gz
   :summary: Misc wordlist.
   :categories:
   - misc
@@ -11154,7 +11124,7 @@ Arkansas:
   :categories:
   - misc
 
-Bloomington,:
+Bloomington:
   :url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Miscellaneous/security-question-answers/us-colleges/Bloomington,.txt
   :summary: Misc wordlist.
   :categories:
@@ -11214,7 +11184,7 @@ Guam:
   :categories:
   - misc
 
-Honolulu,:
+Honolulu:
   :url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Miscellaneous/security-question-answers/us-colleges/Honolulu,.txt
   :summary: Misc wordlist.
   :categories:
@@ -12007,13 +11977,13 @@ milw0rm-dictionary:
   - passwords
 
 Oracle-EBS-passwordlist:
-  :url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Default-Credentials/OracleEBS passwordlist.txt
+  :url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Default-Credentials/OracleEBSpasswordlist.txt
   :summary: Passwords wordlist.
   :categories:
   - passwords
 
 Oracle-EBS-userlist:
-  :url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Default-Credentials/OracleEBS userlist.txt
+  :url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Default-Credentials/OracleEBSuserlist.txt
   :summary: Passwords wordlist.
   :categories:
   - passwords
@@ -12547,7 +12517,7 @@ LotusNotes:
   - discovery
 
 Oracle-EBS-wordlist:
-  :url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/OracleEBS wordlist.txt
+  :url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/OracleEBSwordlist.txt
   :summary: Discovery wordlist.
   :categories:
   - discovery
