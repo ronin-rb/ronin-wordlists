@@ -42,7 +42,8 @@ subdomains-500:
   - subdomains
 
 subdomains-1000:
-  :url: https://raw.githubusercontent./com/rbsec/dnscan/master/subdomains-1000.txt
+
+  :url: https://raw.githubusercontent.com/rbsec/dnscan/master/subdomains-1000.txt
   :summary: Top 1000 most common subdomain names used by the dnscan util.
   :categories:
   - dns
@@ -193,7 +194,7 @@ weakpass_3a:
   :url: https://download.weakpass.com/wordlists/1948/weakpass_3a.7z
   :summary:
     The most complete compilation of wordlist's - more than 1500 in one.
-    Contains near 8 billion of passwords with length from 4 to 25.	
+    Contains near 8 billion of passwords with length from 4 to 25.
   :categories:
     - passwords
 
