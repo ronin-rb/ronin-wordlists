@@ -17,7 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -28,7 +27,6 @@ jobs:
           pip install yamllint
       - name: Lint YAML files
         run: yamllint data/wordlists.yml
-
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
