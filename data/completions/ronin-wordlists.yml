@@ -1,7 +1,7 @@
 ---
 ronin-wordlists remove: &remove
-    - $(ronin-wordlists list)
+  - $(ronin-wordlists list)
 ronin-wordlists rm: *remove
 ronin-wordlists update: &update
-    - $(ronin-wordlists list)
+  - $(ronin-wordlists list)
 ronin-wordlists up: *update
