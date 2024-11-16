@@ -1,4 +1,4 @@
-name: Lint Wordlists 
+name: Lint Wordlists
 
 on:
   push:
