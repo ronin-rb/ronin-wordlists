@@ -36,6 +36,8 @@ test_files:
 required_ruby_version: ">= 3.0.0"
 
 dependencies:
+  # NOTE: required for 'yaml/store'.
+  pstore: ~> 0.1
   wordlist: ~> 1.1
   # Ronin dependencies:
   ronin-core: ~> 0.2
